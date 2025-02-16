@@ -1,0 +1,34 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+.cross {
+  display: flex;
+  position: relative;
+  width: toRem(17);
+  height: toRem(17);
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: toRem(2);
+    background-color: #fff;
+    border-radius: toRem(5);
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.logo-title {
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "Integral CF";
+  font-size: toRem(32);
+  font-weight: 700;
+}

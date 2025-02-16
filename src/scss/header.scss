@@ -1,0 +1,132 @@
+// <div class="header header-top">
+//   <div class="header-top__container">
+//     <div class="header-top__info">
+//       <p>Sign up and get 20% off to your first order.</p>
+//       <a href="#">Sign Up Now</a
+//     </div>
+//     <div class="header-top__close">
+
+.header-top {
+  background: #000;
+
+  &__container {
+    @include adaptiveValue("gap", 425, 0, 0, 1240, 494.98);
+    display: flex;
+    padding-top: toRem(9);
+    padding-bottom: toRem(9);
+    justify-content: space-between;
+
+    @media (min-width: $tablet) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__info {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+  }
+
+  &__button {
+    font-family: Satoshi;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
+
+  &__close {
+    display: none;
+    @media (min-width: $tablet) {
+      display: flex;
+    }
+  }
+}
+
+.header {
+  &__container {
+    padding-top: toRem(24);
+    padding-bottom: toRem(24);
+  }
+  &__body {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(40);
+  }
+  &__logo {
+  }
+  &__menu {
+  }
+  &__search {
+    flex: 1;
+  }
+}
+
+.search-input {
+  position: relative;
+  &__icon {
+    font-size: toRem(24);
+    top: 50%;
+    left: toRem(18);
+    position: absolute;
+    transform: translateY(-50%);
+    color: rgba(0, 0, 0, 0.4);
+  }
+  &__input {
+    display: flex;
+    padding: toRem(12) toRem(52);
+    align-items: flex-start;
+    gap: toRem(12);
+    border-radius: toRem(62);
+    background: #f0f0f0;
+  }
+}
+
+.menu {
+  &__icon {
+    display: none;
+  }
+  &__body {
+  }
+
+  &__list {
+    display: flex;
+    column-gap: toRem(24);
+  }
+
+  &__item {
+    font-size: toRem(16);
+  }
+
+  &__link {
+    &--arrow {
+      display: inline-flex;
+      column-gap: toRem(4);
+      align-items: center;
+
+      > ._icon-arrowx {
+        font-size: toRem(16);
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.actions-header {
+  &__list {
+    display: flex;
+    column-gap: toRem(14);
+  }
+  &__item {
+  }
+  &__link {
+    font-size: toRem(24);
+  }
+}
