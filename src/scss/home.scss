@@ -1,3 +1,126 @@
 //====================================================================================================
+.general {
+  &__body {
+    position: relative;
+    aspect-ratio: 1440 / 660;
+    @include adaptiveValue("padding-top", 114, 40);
+    @include adaptiveValue("padding-bottom", 114, 40, 0, 767.98);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__content {
+    @media (min-width: $tablet) {
+      max-width: toRem(560);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: toRem(48);
+    }
+  }
+
+  &__title {
+    font-family: "Integral CF";
+    font-size: toRem(64);
+    font-style: normal;
+    font-weight: 700;
+    line-height: math.div(64, 64);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(32);
+    }
+  }
+
+  &__text {
+    color: rgba(0, 0, 0, 0.6);
+    line-height: math.div(22, 16);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(32);
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    padding: toRem(16) toRem(54);
+    justify-content: center;
+    align-items: center;
+    border-radius: toRem(62);
+    background: #000;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  &__advantages {
+    max-width: toRem(600);
+  }
+
+  &__brands {
+    background: #000;
+    padding: toRem(44) 0;
+  }
+}
+
+.advantages-general {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  gap: toRem(62);
+
+  &__block {
+    position: relative;
+    &:not(:last-child) {
+      &::before {
+        content: "";
+        width: toRem(1);
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        right: toRem(-32);
+      }
+    }
+  }
+
+  &__number {
+    font-size: toRem(40);
+    font-weight: 700;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  &__description {
+    color: rgba(0, 0, 0, 0.6);
+    line-height: math.div(22, 16);
+  }
+}
+
+.brands-general {
+  &__container {
+  }
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 toRem(-15);
+    @include adaptiveValue("row-gap", 64, 20);
+  }
+  &__block {
+    padding: 0 toRem(15);
+  }
+  &__image {
+  }
+}
 
 //====================================================================================================
