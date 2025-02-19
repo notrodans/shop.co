@@ -1,5 +1,7 @@
 .swiper {
-  overflow: hidden;
+  &:not(&--no-overflow) {
+    overflow: hidden;
+  }
 }
 .swiper-initialized {
   touch-action: pan-y;
