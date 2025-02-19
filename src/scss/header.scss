@@ -1,16 +1,8 @@
-// <div class="header header-top">
-//   <div class="header-top__container">
-//     <div class="header-top__info">
-//       <p>Sign up and get 20% off to your first order.</p>
-//       <a href="#">Sign Up Now</a
-//     </div>
-//     <div class="header-top__close">
-
 .header-top {
   background: #000;
 
   &__container {
-    @include adaptiveValue("gap", 425, 0, 0, 1240, 494.98);
+    @include adaptiveValue("gap", 425, 0, 2, 1240, 494.98);
     display: flex;
     padding-top: toRem(9);
     padding-bottom: toRem(9);

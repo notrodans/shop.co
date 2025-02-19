@@ -45,15 +45,11 @@
   }
 
   &__title {
-    @include adaptiveValue("font-size", 48, 32);
-    text-align: center;
-    font-family: "Integral CF";
-    font-weight: 700;
-
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 55, 32);
     }
   }
+
   &__blocks {
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 36, 24);
@@ -194,4 +190,12 @@
     color: #f33;
     font-weight: 500;
   }
+}
+
+.title {
+  @include adaptiveValue("font-size", 48, 32);
+  text-align: center;
+  font-family: "Integral CF";
+  font-weight: 700;
+  line-height: 112.5%;
 }
