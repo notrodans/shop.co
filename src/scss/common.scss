@@ -1,203 +1,203 @@
 // Заголовки, загальні БЕМ блоки та інше...
 
 .cross {
-  display: flex;
-  position: relative;
-  width: toRem(17);
-  height: toRem(17);
+	display: flex;
+	position: relative;
+	width: toRem(17);
+	height: toRem(17);
 
-  &:before,
-  &:after {
-    position: absolute;
-    content: "";
-    left: 50%;
-    transform: translateX(-50%);
-    height: 100%;
-    width: toRem(2);
-    background-color: #fff;
-    border-radius: toRem(5);
-  }
-  &:before {
-    transform: rotate(45deg);
-  }
-  &:after {
-    transform: rotate(-45deg);
-  }
+	&:before,
+	&:after {
+		position: absolute;
+		content: "";
+		left: 50%;
+		transform: translateX(-50%);
+		height: 100%;
+		width: toRem(2);
+		background-color: #fff;
+		border-radius: toRem(5);
+	}
+	&:before {
+		transform: rotate(45deg);
+	}
+	&:after {
+		transform: rotate(-45deg);
+	}
 }
 
 .logo-title {
-  leading-trim: both;
-  text-edge: cap;
-  font-family: "Integral CF";
-  font-size: toRem(32);
-  font-weight: 700;
+	leading-trim: both;
+	text-edge: cap;
+	font-family: "Integral CF";
+	font-size: toRem(33.45);
+	font-weight: 700;
 }
 
 .products {
-  &__container {
-    @include adaptiveValue("padding-top", 72, 50);
-    @include adaptiveValue("padding-bottom", 64, 40);
-  }
-  &:has(+ &) {
-    .products__container {
-      border-bottom: toRem(1) solid rgba(0, 0, 0, 0.1);
-    }
-  }
+	&__container {
+		@include adaptiveValue("padding-top", 72, 50);
+		@include adaptiveValue("padding-bottom", 64, 40);
+	}
+	&:has(+ &) {
+		.products__container {
+			border-bottom: toRem(1) solid rgba(0, 0, 0, 0.1);
+		}
+	}
 
-  &__title {
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 55, 32);
-    }
-  }
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 55, 32);
+		}
+	}
 
-  &__blocks {
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 36, 24);
-    }
-  }
+	&__blocks {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 36, 24);
+		}
+	}
 
-  &__load-more {
-    max-width: toRem(358);
-    margin: 0 auto;
-    display: flex;
-    align-self: center;
-    padding: toRem(16) toRem(54);
-    justify-content: center;
-    align-items: center;
-    border-radius: toRem(62);
-    border: toRem(1) solid rgba(0, 0, 0, 0.1);
-    font-weight: 500;
-    text-align: center;
-  }
+	&__load-more {
+		max-width: toRem(358);
+		margin: 0 auto;
+		display: flex;
+		align-self: center;
+		padding: toRem(16) toRem(54);
+		justify-content: center;
+		align-items: center;
+		border-radius: toRem(62);
+		border: toRem(1) solid rgba(0, 0, 0, 0.1);
+		font-weight: 500;
+		text-align: center;
+	}
 }
 
 .blocks-products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(toRem(295), 1fr));
-  gap: toRem(20);
-  &__block {
-  }
-  &__link {
-    position: relative;
-    display: block;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(toRem(295), 1fr));
+	gap: toRem(20);
+	&__block {
+	}
+	&__link {
+		position: relative;
+		display: block;
 
-    @media (min-width: $tablet) {
-      aspect-ratio: 295/298;
-    }
+		@media (min-width: $tablet) {
+			aspect-ratio: 295/298;
+		}
 
-    aspect-ratio: 1;
+		aspect-ratio: 1;
 
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 16, 10);
-    }
-  }
-  &__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  &__title {
-    @include adaptiveValue("font-size", 20, 16);
-    font-weight: 700;
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 16, 10);
+		}
+	}
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&__title {
+		@include adaptiveValue("font-size", 20, 16);
+		font-weight: 700;
 
-    &:not(:last-child) {
-      margin-bottom: toRem(8);
-    }
+		&:not(:last-child) {
+			margin-bottom: toRem(8);
+		}
 
-    @media (max-width: $mobileSmall) {
-      &:not(:last-child) {
-        margin-bottom: toRem(4);
-      }
-    }
-  }
-  &__rating {
-    display: flex;
-    align-items: center;
-    column-gap: toRem(10);
+		@media (max-width: $mobileSmall) {
+			&:not(:last-child) {
+				margin-bottom: toRem(4);
+			}
+		}
+	}
+	&__rating {
+		display: flex;
+		align-items: center;
+		column-gap: toRem(10);
 
-    .rating__items {
-      gap: toRem(4.44);
-    }
+		.rating__items {
+			gap: toRem(4.44);
+		}
 
-    .rating__item {
-      width: toRem(18.49);
-      height: toRem(18.49);
-      flex: 0 0 toRem(18.49);
+		.rating__item {
+			width: toRem(18.49);
+			height: toRem(18.49);
+			flex: 0 0 toRem(18.49);
 
-      &,
-      span {
-        height: toRem(18.49);
-        background-size: toRem(18.49);
-      }
+			&,
+			span {
+				height: toRem(18.49);
+				background-size: toRem(18.49);
+			}
 
-      @media (max-width: $mobileSmall) {
-        width: toRem(15.46);
-        height: toRem(15.46);
-        flex: 0 0 toRem(15.46);
+			@media (max-width: $mobileSmall) {
+				width: toRem(15.46);
+				height: toRem(15.46);
+				flex: 0 0 toRem(15.46);
 
-        &,
-        span {
-          height: toRem(15.46);
-          background-size: toRem(15.49);
-        }
-      }
-    }
+				&,
+				span {
+					height: toRem(15.46);
+					background-size: toRem(15.49);
+				}
+			}
+		}
 
-    &:not(:last-child) {
-      margin-bottom: toRem(8);
-    }
+		&:not(:last-child) {
+			margin-bottom: toRem(8);
+		}
 
-    @media (max-width: $mobileSmall) {
-      &:not(:last-child) {
-        margin-bottom: toRem(4);
-      }
-    }
-  }
-  &__grade {
-    font-size: toRem(14);
-    @media (max-width: $mobileSmall) {
-      font-size: toRem(12);
-    }
+		@media (max-width: $mobileSmall) {
+			&:not(:last-child) {
+				margin-bottom: toRem(4);
+			}
+		}
+	}
+	&__grade {
+		font-size: toRem(14);
+		@media (max-width: $mobileSmall) {
+			font-size: toRem(12);
+		}
 
-    span {
-      &:nth-child(2) {
-        color: rgba(0, 0, 0, 0.4);
-      }
-    }
-  }
-  &__prices {
-    display: flex;
-    align-items: center;
-    column-gap: toRem(5);
-  }
-  &__price {
-    @include adaptiveValue("font-size", 24, 20);
-    font-weight: 700;
-  }
-  &__old-price {
-    @include adaptiveValue("font-size", 24, 20);
-    font-weight: 700;
-    color: rgba(0, 0, 0, 0.4);
-  }
-  &__discount {
-    @include adaptiveValue("font-size", 12, 10);
-    display: inline-flex;
-    padding: toRem(6) toRem(14);
-    justify-content: center;
-    align-items: center;
-    border-radius: toRem(62);
-    background: rgba(255, 51, 51, 0.1);
-    color: #f33;
-    font-weight: 500;
-  }
+		span {
+			&:nth-child(2) {
+				color: rgba(0, 0, 0, 0.4);
+			}
+		}
+	}
+	&__prices {
+		display: flex;
+		align-items: center;
+		column-gap: toRem(5);
+	}
+	&__price {
+		@include adaptiveValue("font-size", 24, 20);
+		font-weight: 700;
+	}
+	&__old-price {
+		@include adaptiveValue("font-size", 24, 20);
+		font-weight: 700;
+		color: rgba(0, 0, 0, 0.4);
+	}
+	&__discount {
+		@include adaptiveValue("font-size", 12, 10);
+		display: inline-flex;
+		padding: toRem(6) toRem(14);
+		justify-content: center;
+		align-items: center;
+		border-radius: toRem(62);
+		background: rgba(255, 51, 51, 0.1);
+		color: #f33;
+		font-weight: 500;
+	}
 }
 
 .title {
-  @include adaptiveValue("font-size", 48, 32);
-  font-family: "Integral CF";
-  font-weight: 700;
+	@include adaptiveValue("font-size", 48, 32);
+	font-family: "Integral CF";
+	font-weight: 700;
 
-  &--center {
-    text-align: center;
-  }
+	&--center {
+		text-align: center;
+	}
 }

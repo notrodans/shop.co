@@ -1,3 +1,141 @@
-//====================================================================================================
+.footer {
+	background: #f0f0f0;
+	@include adaptiveValue("padding-top", 140, 190);
+	padding-bottom: toRem(80);
 
-//====================================================================================================
+	&__container {
+	}
+
+	&__body {
+		@include adaptiveValue("padding-bottom", 50, 40);
+		display: grid;
+		justify-content: space-between;
+		grid-template-columns: repeat(auto-fill, minmax(toRem(180), 1fr));
+		gap: toRem(24) toRem(30);
+
+		&:not(:last-child) {
+			border-bottom: toRem(1) solid rgba(0, 0, 0, 0.1);
+		}
+
+		@media (min-width: $tablet) {
+			grid-template-columns: minmax(auto, toRem(248)) repeat(auto-fit, minmax(auto, toRem(149)));
+		}
+	}
+
+	&__block {
+		&--general {
+			@media (max-width: $tablet) {
+				grid-column: 1 / -1;
+			}
+		}
+	}
+
+	&__info {
+	}
+}
+
+.info-footer {
+	padding-top: toRem(20);
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	column-gap: toRem(10);
+	row-gap: toRem(16);
+
+	@media (min-width: $tablet) {
+		grid-template-columns: 1fr 1fr;
+		column-gap: toRem(12);
+	}
+
+	&__copyright {
+		font-size: toRem(14);
+		white-space: nowrap;
+		color: rgba(0, 0, 0, 0.6);
+	}
+
+	&__pay-methods {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: max-content;
+		justify-self: flex-end;
+		gap: toRem(12);
+	}
+}
+
+.block-footer {
+	&__logo {
+	}
+	&__text {
+		font-size: toRem(14);
+		line-height: math.div(22, 14);
+		color: rgba(0, 0, 0, 0.6);
+
+		&:not(:last-child) {
+			margin-bottom: toRem(35);
+		}
+	}
+	&__socials {
+	}
+	&__section {
+		@include adaptiveValue("font-size", 16, 14);
+		font-weight: 500;
+		line-height: math.div(33.45, 16);
+		text-transform: uppercase;
+		letter-spacing: toRem(3);
+	}
+	&__section,
+	&__logo {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 25, 16);
+		}
+	}
+	&__list {
+		display: grid;
+		@include adaptiveValue("row-gap", 20, 14);
+	}
+	&__item {
+	}
+	&__link {
+	}
+}
+
+.socials-footer {
+	display: inline-grid;
+	gap: toRem(12);
+	grid-auto-flow: column;
+	grid-auto-columns: toRem(28);
+	grid-auto-rows: toRem(28);
+
+	&__item {
+	}
+
+	&__link {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border-radius: toRem(28);
+		border: toRem(1) solid rgba(0, 0, 0, 0.2);
+		background: #fff;
+		transition: 0.05s all linear;
+
+		&:hover {
+			@media (hover: hover) {
+				background: #000;
+				color: #fff;
+			}
+		}
+
+		&._icon-github::before {
+			transform: translateX(3.125%);
+		}
+		&._icon-twitter::before {
+			transform: translateX(3.125%);
+		}
+		&._icon-fb::before {
+			transform: translateX(-3.125%);
+		}
+	}
+}

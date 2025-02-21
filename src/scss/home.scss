@@ -1,334 +1,411 @@
 //====================================================================================================
 .general {
-  &__body {
-    position: relative;
-    aspect-ratio: 1440 / 660;
-    @include adaptiveValue("padding-top", 66, 40);
-    @include adaptiveValue("padding-bottom", 114, 40);
-  }
+	&__body {
+		position: relative;
+		aspect-ratio: 1440 / 660;
+		@include adaptiveValue("padding-top", 66, 40);
+		@include adaptiveValue("padding-bottom", 114, 40);
+	}
 
-  &__container {
-    position: relative;
-    z-index: 2;
-  }
+	&__container {
+		position: relative;
+		z-index: 2;
+	}
 
-  &__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
-  &__content {
-    @media (min-width: $tablet) {
-      max-width: toRem(560);
-    }
+	&__content {
+		@media (min-width: $tablet) {
+			max-width: toRem(560);
+		}
 
-    &:not(:last-child) {
-      margin-bottom: toRem(48);
-    }
-  }
+		&:not(:last-child) {
+			margin-bottom: toRem(48);
+		}
+	}
 
-  &__title {
-    font-family: "Integral CF";
-    font-size: toRem(64);
-    font-style: normal;
-    font-weight: 700;
-    line-height: math.div(64, 64);
+	&__title {
+		font-family: "Integral CF";
+		font-size: toRem(64);
+		font-style: normal;
+		font-weight: 700;
+		line-height: math.div(64, 64);
 
-    &:not(:last-child) {
-      margin-bottom: toRem(32);
-    }
-  }
+		&:not(:last-child) {
+			margin-bottom: toRem(32);
+		}
+	}
 
-  &__text {
-    color: rgba(0, 0, 0, 0.6);
-    line-height: math.div(22, 16);
+	&__text {
+		color: rgba(0, 0, 0, 0.6);
+		line-height: math.div(22, 16);
 
-    &:not(:last-child) {
-      margin-bottom: toRem(32);
-    }
-  }
+		&:not(:last-child) {
+			margin-bottom: toRem(32);
+		}
+	}
 
-  &__link {
-    display: inline-flex;
-    padding: toRem(16) toRem(54);
-    justify-content: center;
-    align-items: center;
-    border-radius: toRem(62);
-    background: #000;
-    color: #fff;
-    font-weight: 500;
-  }
+	&__link {
+		display: inline-flex;
+		padding: toRem(16) toRem(54);
+		justify-content: center;
+		align-items: center;
+		border-radius: toRem(62);
+		background: #000;
+		color: #fff;
+		font-weight: 500;
+	}
 
-  &__advantages {
-    max-width: toRem(600);
-  }
+	&__advantages {
+		max-width: toRem(600);
+	}
 
-  &__brands {
-    background: #000;
-    padding: toRem(44) 0;
-  }
+	&__brands {
+		background: #000;
+		padding: toRem(44) 0;
+	}
 }
 
 .advantages-general {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: auto;
-  gap: toRem(62);
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: auto;
+	gap: toRem(62);
 
-  &__block {
-    position: relative;
-    &:not(:last-child) {
-      &::before {
-        content: "";
-        width: toRem(1);
-        height: 100%;
-        background: rgba(0, 0, 0, 0.1);
-        position: absolute;
-        right: toRem(-32);
-      }
-    }
-  }
+	&__block {
+		position: relative;
+		&:not(:last-child) {
+			&::before {
+				content: "";
+				width: toRem(1);
+				height: 100%;
+				background: rgba(0, 0, 0, 0.1);
+				position: absolute;
+				right: toRem(-32);
+			}
+		}
+	}
 
-  &__number {
-    font-size: toRem(40);
-    font-weight: 700;
+	&__number {
+		font-size: toRem(40);
+		font-weight: 700;
 
-    &:not(:last-child) {
-      margin-bottom: toRem(10);
-    }
-  }
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
 
-  &__description {
-    color: rgba(0, 0, 0, 0.6);
-    line-height: math.div(22, 16);
-  }
+	&__description {
+		color: rgba(0, 0, 0, 0.6);
+		line-height: math.div(22, 16);
+	}
 }
 
 .brands-general {
-  &__container {
-  }
-  &__blocks {
-    @include adaptiveValue("row-gap", 64, 20);
-    @include adaptiveValue("column-gap", 53, 17);
+	&__container {
+	}
+	&__blocks {
+		@include adaptiveValue("row-gap", 64, 20);
+		@include adaptiveValue("column-gap", 53, 17);
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
 
-    @media (max-width: $tablet) {
-      justify-content: center;
-    }
-  }
+		@media (max-width: $tablet) {
+			justify-content: center;
+		}
+	}
 
-  &__block {
-  }
+	&__block {
+	}
 
-  &__image {
-    width: 100%;
-  }
+	&__image {
+		width: 100%;
+	}
 }
 
 .categories {
-  @include adaptiveValue("padding-bottom", 80, 50);
+	@include adaptiveValue("padding-bottom", 80, 50);
 
-  &__container {
-  }
+	&__container {
+	}
 
-  &__body {
-    @include adaptiveValue("--padding-y-1", 70, 40);
-    @include adaptiveValue("--padding-y-2", 70, 27);
-    @include adaptiveValue("--padding-x", 64, 24);
-    @include adaptiveValue("border-radius", 40, 20);
+	&__body {
+		@include adaptiveValue("--padding-y-1", 70, 40);
+		@include adaptiveValue("--padding-y-2", 70, 27);
+		@include adaptiveValue("--padding-x", 64, 24);
+		@include adaptiveValue("border-radius", 40, 20);
 
-    padding: 0 var(--padding-x);
-    padding-top: var(--padding-y-1);
-    padding-bottom: var(--padding-y-2);
-    background: #f0f0f0;
-  }
+		padding: 0 var(--padding-x);
+		padding-top: var(--padding-y-1);
+		padding-bottom: var(--padding-y-2);
+		background: #f0f0f0;
+	}
 
-  &__title {
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 64, 28);
-    }
-  }
+	&__title {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 64, 28);
+		}
+	}
 
-  &__layout {
-  }
+	&__layout {
+	}
 }
 
 .layout-categories {
-  &__block {
-    display: flex;
-    @include adaptiveValue("gap", 20, 16);
+	&__block {
+		display: flex;
+		@include adaptiveValue("gap", 20, 16);
 
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 20, 16);
-    }
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 20, 16);
+		}
 
-    @media (max-width: $mobile) {
-      flex-direction: column;
-    }
-  }
-  &__category {
-    @include adaptiveValue("--padding-y", 25, 16);
-    @include adaptiveValue("--padding-x", 36, 24);
+		@media (max-width: $mobile) {
+			flex-direction: column;
+		}
+	}
+	&__category {
+		@include adaptiveValue("--padding-y", 25, 16);
+		@include adaptiveValue("--padding-x", 36, 24);
 
-    position: relative;
-    padding: var(--padding-y) var(--padding-x);
+		position: relative;
+		padding: var(--padding-y) var(--padding-x);
 
-    aspect-ratio: 310/190;
+		aspect-ratio: 310/190;
 
-    @media (max-width: $mobile) {
-      flex-grow: 1;
-    }
-    &--1\/3 {
-      flex-basis: 33%;
+		@media (max-width: $mobile) {
+			flex-grow: 1;
+		}
+		&--1\/3 {
+			flex-basis: 33%;
 
-      @media (min-width: $mobile) {
-        aspect-ratio: 407/289;
-      }
-    }
+			@media (min-width: $mobile) {
+				aspect-ratio: 407/289;
+			}
+		}
 
-    &--2\/3 {
-      flex-basis: 66%;
+		&--2\/3 {
+			flex-basis: 66%;
 
-      @media (min-width: $mobile) {
-        aspect-ratio: 684/289;
-      }
-    }
-  }
+			@media (min-width: $mobile) {
+				aspect-ratio: 684/289;
+			}
+		}
+	}
 
-  &__name-category {
-    @include adaptiveValue("font-size", 36, 24);
-    font-weight: 700;
-  }
+	&__name-category {
+		@include adaptiveValue("font-size", 36, 24);
+		font-weight: 700;
+	}
 
-  &__name-category {
-    position: relative;
-    z-index: 2;
-  }
+	&__name-category {
+		position: relative;
+		z-index: 2;
+	}
 
-  &__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: toRem(20);
-  }
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: toRem(20);
+	}
 }
 
 .customers {
-  &__container {
-  }
+	@include adaptiveValue("padding-bottom", 72, 50);
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    gap: toRem(16);
+	@media (min-width: toEm($containerWidth)) {
+		--width: calc((100% - 77.5rem) / 2);
+		position: relative;
 
-    &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 40, 24);
-    }
-  }
+		&::before,
+		&::after {
+			position: absolute;
+			width: var(--width);
+			content: "";
+			top: 0;
+			height: 100%;
+			z-index: 2;
+			backdrop-filter: blur(toRem(2));
+		}
 
-  &__title {
-  }
+		&::before {
+			top: 0;
+			left: 0;
+		}
 
-  &__buttons {
-    display: flex;
-    align-items: center;
-    align-self: flex-end;
-    gap: toRem(16);
-  }
+		&::after {
+			top: 0;
+			right: 0;
+		}
+	}
 
-  &__button {
-    &--reflect {
-      transform: rotate(180deg) translateY(1px);
-    }
-  }
+	&__container {
+	}
 
-  &__slider {
-    --width: calc((100vw - 1272px) / 2);
-    position: relative;
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		gap: toRem(16);
 
-    &::before,
-    &::after {
-      position: absolute;
-      width: var(--width);
-      content: "";
-      top: 0;
-      left: 0;
-      height: 100%;
-      z-index: 2;
-      backdrop-filter: blur(toRem(2));
-    }
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 24);
+		}
+	}
 
-    &::before {
-      left: calc(var(--width) * -1);
-    }
+	&__title {
+	}
 
-    &::after {
-      left: auto;
-      right: calc(var(--width) * -1);
-    }
-  }
+	&__buttons {
+		display: flex;
+		align-items: center;
+		align-self: flex-end;
+		gap: toRem(16);
+	}
 
-  &__wrapper {
-  }
+	&__button {
+		&--reflect {
+			transform: rotate(180deg) translateY(2px);
+		}
+	}
 
-  &__slider {
-  }
+	&__slider {
+	}
 
-  &__wrapper {
-  }
+	&__wrapper {
+	}
 
-  &__slide {
-    @include adaptiveValue("--padding-x", 32, 24);
-    @include adaptiveValue("--padding-y", 28, 24);
-    padding: var(--padding-x) var(--padding-y);
-    aspect-ratio: 400 / 240;
-    border-radius: toRem(20);
-    border: toRem(1) solid rgba(0, 0, 0, 0.1);
-  }
+	&__slider {
+	}
 
-  &__rating {
-    &:not(:last-child) {
-      margin-bottom: toRem(15);
-    }
-  }
+	&__wrapper {
+	}
 
-  &__content {
-  }
+	&__slide {
+		@include adaptiveValue("--padding-x", 32, 24);
+		@include adaptiveValue("--padding-y", 28, 24);
+		padding: var(--padding-x) var(--padding-y);
+		border-radius: toRem(20);
+		border: toRem(1) solid rgba(0, 0, 0, 0.1);
 
-  &__author {
-    display: flex;
-    column-gap: toRem(4);
-    align-items: center;
+		@media (min-width: $mobile) {
+			aspect-ratio: 400 / 240;
+		}
+	}
 
-    &:not(:last-child) {
-      margin-bottom: toRem(11.5);
-    }
+	&__rating {
+		&:not(:last-child) {
+			margin-bottom: toRem(15);
+		}
+	}
 
-    p {
-      @include adaptiveValue("font-size", 20, 16);
-      font-weight: 700;
-      line-height: math.div(22, 20);
-    }
+	&__content {
+	}
 
-    svg {
-      flex: 0 0 toRem(19.5);
-      max-width: toRem(19.5);
-      max-height: toRem(19.5);
-      color: #01ab31;
-    }
-  }
+	&__author {
+		display: flex;
+		column-gap: toRem(4);
+		align-items: center;
 
-  &__review {
-    @include adaptiveValue("font-size", 16, 14);
-    color: rgba(0, 0, 0, 0.6);
-    line-height: math.div(20, 16);
-  }
+		&:not(:last-child) {
+			margin-bottom: toRem(11.5);
+		}
+
+		p {
+			@include adaptiveValue("font-size", 20, 16);
+			font-weight: 700;
+			line-height: math.div(22, 20);
+		}
+
+		svg {
+			flex: 0 0 toRem(19.5);
+			max-width: toRem(19.5);
+			max-height: toRem(19.5);
+			color: #01ab31;
+		}
+	}
+
+	&__review {
+		@include adaptiveValue("font-size", 16, 14);
+		color: rgba(0, 0, 0, 0.6);
+		line-height: math.div(20, 16);
+	}
+}
+
+.stay-up {
+	position: relative;
+	z-index: 1;
+	margin-bottom: calc(var(--h) * -0.5px);
+
+	&__container {
+		background: #000000;
+		@include adaptiveValue("--padding-y", 36, 26);
+		@include adaptiveValue("--padding-x", 64, 24);
+
+		padding: var(--padding-y) var(--padding-x);
+		display: flex;
+		gap: toRem(42);
+
+		@media (min-width: toEm($containerWidth)) {
+			border-radius: toRem(20);
+		}
+
+		@media (min-width: $tablet) {
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		@media (max-width: $tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__body {
+	}
+
+	&__title {
+		color: #fff;
+		line-height: 112.5%;
+	}
+	&__form {
+		@media (min-width: $tablet) {
+			flex: 1 0 31.38%;
+		}
+	}
+	&__block {
+		position: relative;
+		&:not(:last-child) {
+			margin-bottom: toRem(14);
+		}
+	}
+	&__icon {
+		position: absolute;
+		font-size: toRem(24);
+		top: 50%;
+		left: toRem(16);
+		transform: translateY(calc(-50% + 1px));
+		color: rgba(0, 0, 0, 0.4);
+	}
+	&__field {
+		width: 100%;
+		padding: toRem(12) toRem(16);
+		border-radius: toRem(62);
+		background: #fff;
+
+		&--email {
+			padding: toRem(12) toRem(16) toRem(12) toRem(52);
+		}
+	}
+	&__button {
+		font-weight: 500;
+	}
 }
 
 //====================================================================================================

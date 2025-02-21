@@ -8,10 +8,10 @@ import rename from "gulp-rename";
 
 // Експортуємо об'єкт
 export const plugins = {
-  notify,
-  if: ifPlugin,
-  prettier,
-  newer,
-  plumber,
-  rename,
+	notify,
+	if: ifPlugin,
+	prettier,
+	newer,
+	plumber,
+	rename
 };
