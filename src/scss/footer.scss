@@ -1,6 +1,5 @@
 .footer {
 	background: #f0f0f0;
-	@include adaptiveValue("padding-top", 140, 190);
 	padding-bottom: toRem(80);
 
 	&__container {
@@ -31,6 +30,82 @@
 	}
 
 	&__info {
+	}
+
+	&__stay-up {
+		@media (min-width: toEm($containerWidth)) {
+			margin-top: calc(var(--h) * -0.5px);
+		}
+
+		@include adaptiveValue("margin-bottom", 50, 32);
+	}
+}
+
+.stay-up {
+	position: relative;
+	z-index: 1;
+
+	&__container {
+		background: #000000;
+		@include adaptiveValue("--padding-y", 36, 26);
+		@include adaptiveValue("--padding-x", 64, 24);
+
+		padding: var(--padding-y) var(--padding-x);
+		display: flex;
+		gap: toRem(42);
+
+		@media (min-width: toEm($containerWidth)) {
+			border-radius: toRem(20);
+		}
+
+		@media (min-width: $tablet) {
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		@media (max-width: $tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__body {
+	}
+
+	&__title {
+		color: #fff;
+		line-height: 112.5%;
+	}
+	&__form {
+		@media (min-width: $tablet) {
+			flex: 1 0 31.38%;
+		}
+	}
+	&__block {
+		position: relative;
+		&:not(:last-child) {
+			margin-bottom: toRem(14);
+		}
+	}
+	&__icon {
+		position: absolute;
+		font-size: toRem(24);
+		top: 50%;
+		left: toRem(16);
+		transform: translateY(calc(-50% + 1px));
+		color: rgba(0, 0, 0, 0.4);
+	}
+	&__field {
+		width: 100%;
+		padding: toRem(12) toRem(16);
+		border-radius: toRem(62);
+		background: #fff;
+
+		&--email {
+			padding: toRem(12) toRem(16) toRem(12) toRem(52);
+		}
+	}
+	&__button {
+		font-weight: 500;
 	}
 }
 

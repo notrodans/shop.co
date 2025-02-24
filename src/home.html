@@ -4,7 +4,7 @@
 	@@include('html/_head.htm',{ "title":"HomePage" })
 	<body>
 		<div class="wrapper">
-			@@include('html/_header.htm',{})
+			@@include('html/_header.htm',{"line": ""})
 			<main class="page">
 				@@include('html/_general.htm')
 				<section class="page__products products">
@@ -19,12 +19,12 @@
 										alt="@@alt"
 								/></a>
 								<a class="blocks-products__title" href="#">T-shirt With Tape Details</a>
-								<div class="blocks-products__rating">
+								<div class="blocks-products__rating block-rating">
 									<div data-rating data-rating-value="4.5" class="rating"></div>
-									<div class="blocks-products__grade"><span>4.5</span>/<span>5</span></div>
+									<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices">
-									<span class="blocks-products__price">$120</span>
+								<div class="blocks-products__prices prices">
+									<span class="prices__current">$120</span>
 								</div>
 							</div>
 							<div class="blocks-products__block">
@@ -35,14 +35,14 @@
 										alt="@@alt"
 								/></a>
 								<a class="blocks-products__title" href="#">Skinny Fit Jeans</a>
-								<div class="blocks-products__rating">
+								<div class="blocks-products__rating block-rating">
 									<div data-rating data-rating-value="3.5" class="rating"></div>
-									<div class="blocks-products__grade"><span>3.5</span>/<span>5</span></div>
+									<div class="block-rating__grade"><span>3.5</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices">
-									<span class="blocks-products__price">$240</span>
-									<span class="blocks-products__old-price">$260</span>
-									<span class="blocks-products__discount">-20%</span>
+								<div class="blocks-products__prices prices">
+									<span class="prices__current">$240</span>
+									<span class="prices__old">$260</span>
+									<span class="prices__discount">-20%</span>
 								</div>
 							</div>
 							<div class="blocks-products__block">
@@ -53,12 +53,12 @@
 										alt="@@alt"
 								/></a>
 								<a class="blocks-products__title" href="#">Checkered Shirt</a>
-								<div class="blocks-products__rating">
+								<div class="blocks-products__rating block-rating">
 									<div data-rating data-rating-value="4.5" class="rating"></div>
-									<div class="blocks-products__grade"><span>4.5</span>/<span>5</span></div>
+									<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices">
-									<span class="blocks-products__price">$180</span>
+								<div class="blocks-products__prices prices">
+									<span class="prices__current">$180</span>
 								</div>
 							</div>
 							<div class="blocks-products__block">
@@ -69,14 +69,14 @@
 										alt="@@alt"
 								/></a>
 								<a class="blocks-products__title" href="#">Sleeve Striped T-shirt</a>
-								<div class="blocks-products__rating">
+								<div class="blocks-products__rating block-rating">
 									<div data-rating data-rating-value="4.5" class="rating"></div>
-									<div class="blocks-products__grade"><span>4.5</span>/<span>5</span></div>
+									<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices">
-									<span class="blocks-products__price">$130</span>
-									<span class="blocks-products__old-price">$160</span>
-									<span class="blocks-products__discount">-30%</span>
+								<div class="blocks-products__prices prices">
+									<span class="prices__current">$130</span>
+									<span class="prices__old">$160</span>
+									<span class="prices__discount">-30%</span>
 								</div>
 							</div>
 						</div>
@@ -95,14 +95,14 @@
 										alt="@@alt"
 								/></a>
 								<a class="blocks-products__title" href="#">Vertical Striped Shirt</a>
-								<div class="blocks-products__rating">
+								<div class="blocks-products__rating block-rating">
 									<div data-rating data-rating-value="5" class="rating"></div>
-									<div class="blocks-products__grade"><span>5.0</span>/<span>5</span></div>
+									<div class="block-rating__grade"><span>5.0</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices">
-									<span class="blocks-products__price">$212</span>
-									<span class="blocks-products__old-price">$232</span>
-									<span class="blocks-products__discount">-20%</span>
+								<div class="blocks-products__prices prices">
+									<span class="prices__current">$212</span>
+									<span class="prices__old">$232</span>
+									<span class="prices__discount">-20%</span>
 								</div>
 							</div>
 							<div class="blocks-products__block">
@@ -113,12 +113,12 @@
 										alt="@@alt"
 								/></a>
 								<a class="blocks-products__title" href="#">Courage Graphic T-shirt</a>
-								<div class="blocks-products__rating">
+								<div class="blocks-products__rating block-rating">
 									<div data-rating data-rating-value="4" class="rating"></div>
-									<div class="blocks-products__grade"><span>4</span>/<span>5</span></div>
+									<div class="block-rating__grade"><span>4</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices">
-									<span class="blocks-products__price">$145</span>
+								<div class="blocks-products__prices prices">
+									<span class="prices__current">$145</span>
 								</div>
 							</div>
 							<div class="blocks-products__block">
@@ -129,12 +129,12 @@
 										alt="@@alt"
 								/></a>
 								<a class="blocks-products__title" href="#">Loose Fit Bermuda Shorts</a>
-								<div class="blocks-products__rating">
+								<div class="blocks-products__rating block-rating">
 									<div data-rating data-rating-value="3" class="rating"></div>
-									<div class="blocks-products__grade"><span>3.0</span>/<span>5</span></div>
+									<div class="block-rating__grade"><span>3.0</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices">
-									<span class="blocks-products__price">$80</span>
+								<div class="blocks-products__prices prices">
+									<span class="prices__current">$80</span>
 								</div>
 							</div>
 							<div class="blocks-products__block">
@@ -145,12 +145,12 @@
 										alt="@@alt"
 								/></a>
 								<a class="blocks-products__title" href="#">Faded Skinny Jeans</a>
-								<div class="blocks-products__rating">
+								<div class="blocks-products__rating block-rating">
 									<div data-rating data-rating-value="4.5" class="rating"></div>
-									<div class="blocks-products__grade"><span>4.5</span>/<span>5</span></div>
+									<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices">
-									<span class="blocks-products__price">$210</span>
+								<div class="blocks-products__prices prices">
+									<span class="prices__current">$210</span>
 								</div>
 							</div>
 						</div>
@@ -351,26 +351,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</section>
-				<section class="stay-up size">
-					<div class="stay-up__container">
-						<h2 class="stay-up__title title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
-						<form class="stay-up__form">
-							<div class="stay-up__block">
-								<i class="stay-up__icon _icon-mail"></i>
-								<input
-									class="stay-up__field stay-up__field--email"
-									placeholder="Enter your email address"
-									type="email"
-								/>
-							</div>
-							<div class="stay-up__block">
-								<button type="submit" class="stay-up__field stay-up__button">
-									Subscribe to Newsletter
-								</button>
-							</div>
-						</form>
 					</div>
 				</section>
 			</main>

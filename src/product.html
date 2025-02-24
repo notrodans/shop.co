@@ -1,0 +1,213 @@
+<!doctype html>
+
+<html lang="en">
+	@@include('html/_head.htm',{ "title":"HomePage" })
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm', {"line": "header_line"})
+			<main class="page page_product">
+				<nav class="page__breadcrumbs breadcrumbs">
+					<div class="breadcrumbs__container">
+						<span class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="#"> Home </a>
+							<i class="_icon-arrowx"></i>
+						</span>
+						<span class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="#"> Shop </a>
+							<i class="_icon-arrowx"></i>
+						</span>
+						<span class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="#"> Men </a>
+							<i class="_icon-arrowx"></i>
+						</span>
+						<span class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="#"> T-shirts </a>
+						</span>
+					</div>
+				</nav>
+				<div class="page__product-card product-card">
+					<div class="product-card__container">
+						<div class="product-card__start">
+							<div class="product-card__thumbnails swiper">
+								<div class="product-card__wrapper swiper-wrapper">
+									<button type="button" class="product-card__slide swiper-slide">
+										<img
+											class="product-card__thumbnail ibg"
+											src="@img/product/01.png"
+											alt="Image"
+										/>
+									</button>
+									<button type="button" class="product-card__slide swiper-slide">
+										<img
+											class="product-card__thumbnail ibg"
+											src="@img/product/02.png"
+											alt="Image"
+										/>
+									</button>
+									<button type="button" class="product-card__slide swiper-slide">
+										<img
+											class="product-card__thumbnail ibg"
+											src="@img/product/03.png"
+											alt="Image"
+										/>
+									</button>
+									<button type="button" class="product-card__slide swiper-slide">
+										<img
+											class="product-card__thumbnail ibg"
+											src="@img/product/01.png"
+											alt="Image"
+										/>
+									</button>
+									<button type="button" class="product-card__slide swiper-slide">
+										<img
+											class="product-card__thumbnail ibg"
+											src="@img/product/02.png"
+											alt="Image"
+										/>
+									</button>
+									<button type="button" class="product-card__slide swiper-slide">
+										<img
+											class="product-card__thumbnail ibg"
+											src="@img/product/03.png"
+											alt="Image"
+										/>
+									</button>
+								</div>
+							</div>
+							<div class="product-card__image">
+								<img class="ibg" src="@img/product/04.png" alt="Image" />
+							</div>
+						</div>
+
+						<div class="product-card__end">
+							<div class="product-card__content">
+								<div class="product-card__title title title--sl">One Life Graphic T-shirt</div>
+								<div class="product-card__rating block-rating block-rating--l">
+									<div
+										data-rating
+										data-rating-title
+										data-rating-value="4.5"
+										class="block-rating__rating rating"
+									></div>
+									<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+								</div>
+								<div class="product-card__prices prices prices--l">
+									<span class="prices__current">$260</span>
+									<span class="prices__old">$300</span>
+									<span class="prices__discount">-40%</span>
+								</div>
+								<p class="product-card__description">
+									This graphic t-shirt which is perfect for any occasion. Crafted from a soft and
+									breathable fabric, it offers superior comfort and style.
+								</p>
+								<hr class="separator" />
+								<form class="product-card__form" method="post">
+									<div class="product-card__color-picker color-picker">
+										<span class="color-picker__label label">Select Colors</span>
+										<div class="color-picker__options">
+											<label for="olive" class="color-picker__option">
+												<input
+													id="olive"
+													value="olive"
+													type="radio"
+													name="color"
+													class="color-picker__input"
+													checked
+												/>
+												<span class="color-picker__circle color-picker__circle--olive">
+													<svg class="color-picker__icon" viewBox="0 0 24 24">
+														<path d="M5 12l4 4L19 7" stroke="white" stroke-width="2" fill="none" />
+													</svg>
+												</span>
+											</label>
+											<label for="teal" class="color-picker__option">
+												<input
+													id="teal"
+													value="teal"
+													type="radio"
+													name="color"
+													class="color-picker__input"
+												/>
+												<span class="color-picker__circle color-picker__circle--teal">
+													<svg class="color-picker__icon" viewBox="0 0 24 24">
+														<path d="M5 12l4 4L19 7" stroke="white" stroke-width="2" fill="none" />
+													</svg>
+												</span>
+											</label>
+											<label for="navy" class="color-picker__option">
+												<input
+													id="navy"
+													value="navy"
+													type="radio"
+													name="color"
+													class="color-picker__input"
+												/>
+												<span class="color-picker__circle color-picker__circle--navy">
+													<svg class="color-picker__icon" viewBox="0 0 24 24">
+														<path d="M5 12l4 4L19 7" stroke="white" stroke-width="2" fill="none" />
+													</svg>
+												</span>
+											</label>
+										</div>
+									</div>
+									<hr class="separator" />
+									<div class="product-card__size-picker size-picker">
+										<span class="size-picker__label label">Choose Size</span>
+										<div class="size-picker__options">
+											<label for="small" class="size-picker__option">
+												<input
+													id="small"
+													value="small"
+													type="radio"
+													name="size"
+													class="size-picker__input"
+													checked
+												/>
+												<span class="size-picker__text"> Small </span>
+											</label>
+											<label for="medium" class="size-picker__option">
+												<input
+													id="medium"
+													value="medium"
+													type="radio"
+													name="size"
+													class="size-picker__input"
+												/>
+												<span class="size-picker__text"> Medium </span>
+											</label>
+											<label for="large" class="size-picker__option">
+												<input
+													id="large"
+													value="large"
+													type="radio"
+													name="size"
+													class="size-picker__input"
+												/>
+												<span class="size-picker__text"> Large </span>
+											</label>
+											<label for="x-large" class="size-picker__option">
+												<input
+													id="x-large"
+													value="x-large"
+													type="radio"
+													name="size"
+													class="size-picker__input"
+												/>
+												<span class="size-picker__text"> X-Large </span>
+											</label>
+										</div>
+									</div>
+									<hr class="separator" />
+									<div class="product-card__quantity"></div>
+									<button type="submit" class="product-card__button">Add to Cart</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

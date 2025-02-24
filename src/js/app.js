@@ -126,7 +126,7 @@ flsForms.formFieldsInit({
 flsForms.formRating();
 
 /* Модуль роботи з select. */
-// import './libs/select.js'
+//import "./libs/select.js";
 
 /* Модуль роботи з календарем */
 // import './files/forms/datepicker.js'
@@ -147,7 +147,7 @@ flsForms.formRating();
 Документація плагіна: https://refreshless.com/nouislider/
 Сніппет (HTML): range
 */
-// import "./files/forms/range.js";
+ import "./files/forms/range.js";
 
 /* Модуль роботи з підказками (tippy) */
 /*

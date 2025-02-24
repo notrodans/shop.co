@@ -1,4 +1,16 @@
 //====================================================================================================
+
+.page {
+	@include adaptiveValue("padding-bottom", 80, 50, 0, $containerWidth, $minWidth);
+	@media (min-width: toEm($containerWidth)) {
+		padding-bottom: var(--paddingB);
+	}
+
+	&_product {
+		padding-top: toRem(24);
+	}
+}
+
 .general {
 	&__body {
 		position: relative;
@@ -219,8 +231,6 @@
 }
 
 .customers {
-	@include adaptiveValue("padding-bottom", 72, 50);
-
 	@media (min-width: toEm($containerWidth)) {
 		--width: calc((100% - 77.5rem) / 2);
 		position: relative;
@@ -272,7 +282,7 @@
 
 	&__button {
 		&--reflect {
-			transform: rotate(180deg) translateY(2px);
+			transform: rotate(180deg) translateY(1px);
 		}
 	}
 
@@ -339,71 +349,75 @@
 	}
 }
 
-.stay-up {
-	position: relative;
-	z-index: 1;
-	margin-bottom: calc(var(--h) * -0.5px);
+.product-card {
+	padding-block-start: toRem(36);
+	padding-block-end: toRem(80);
 
 	&__container {
-		background: #000000;
-		@include adaptiveValue("--padding-y", 36, 26);
-		@include adaptiveValue("--padding-x", 64, 24);
+		justify-content: space-between;
+		display: grid;
+		grid-template-columns: minmax(toRem(440), toRem(610)) minmax(toRem(440), toRem(600));
+		row-gap: toRem(20);
+		@include adaptiveValue("column-gap", 40, 15, 2, $containerWidth, 768);
+	}
 
-		padding: var(--padding-y) var(--padding-x);
+	&__start {
 		display: flex;
-		gap: toRem(42);
+		column-gap: toRem(14);
+	}
+	&__end {
+	}
+	&__thumbnails {
+		padding-block: toRem(6);
+		flex-shrink: 0;
+		max-width: toRem(162);
+	}
+	&__wrapper {
+	}
+	&__slide {
+	}
+	&__thumbnail {
+		border-radius: toRem(20);
+		.swiper-slide-active & {
+			border-block: toRem(1) solid #000;
+			border-inline: toRem(1) solid #000;
+		}
+	}
+	&__image {
+		aspect-ratio: 443/530;
+		width: 100%;
+		height: 100%;
 
-		@media (min-width: toEm($containerWidth)) {
+		img {
 			border-radius: toRem(20);
 		}
-
-		@media (min-width: $tablet) {
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		@media (max-width: $tablet) {
-			flex-direction: column;
-		}
 	}
-
-	&__body {
+	&__content {
 	}
-
 	&__title {
-		color: #fff;
-		line-height: 112.5%;
-	}
-	&__form {
-		@media (min-width: $tablet) {
-			flex: 1 0 31.38%;
-		}
-	}
-	&__block {
-		position: relative;
 		&:not(:last-child) {
-			margin-bottom: toRem(14);
+			margin-block-end: toRem(14);
 		}
 	}
-	&__icon {
-		position: absolute;
-		font-size: toRem(24);
-		top: 50%;
-		left: toRem(16);
-		transform: translateY(calc(-50% + 1px));
-		color: rgba(0, 0, 0, 0.4);
-	}
-	&__field {
-		width: 100%;
-		padding: toRem(12) toRem(16);
-		border-radius: toRem(62);
-		background: #fff;
-
-		&--email {
-			padding: toRem(12) toRem(16) toRem(12) toRem(52);
+	&__rating {
+		&:not(:last-child) {
+			margin-block-end: toRem(14);
 		}
+	}
+	&__prices {
+		&:not(:last-child) {
+			margin-block-end: toRem(14);
+		}
+	}
+	&__description {
+		line-height: math.div(22, 16);
+		color: rgba(0, 0, 0, 0.6);
 	}
 	&__button {
+		padding: toRem(16) toRem(64);
+		border-radius: toRem(62);
+		background: #000;
+		color: #fff;
 		font-weight: 500;
 	}
 }

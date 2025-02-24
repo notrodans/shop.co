@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from "swiper";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay, Mousewheel } from "swiper/modules";
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -99,6 +99,83 @@ function initSliders() {
 			on: {}
 		});
 	}
+
+	new Swiper(".product-card__thumbnails", {
+		// Вказуємо склас потрібного слайдера
+		// Підключаємо модулі слайдера
+		// для конкретного випадку
+		modules: [Navigation, Autoplay, Mousewheel],
+		direction: "vertical",
+		mousewheel: {
+			enabled: true,
+		},
+		slidesPerView: 3,
+		spaceBetween: 8,
+		autoHeight: true,
+    loop: true,
+		speed: 300,
+		//initialSlide: 0,
+
+		//touchRatio: 0,
+		//simulateTouch: false,
+		//loop: true,
+		//rewind: true,
+		//preloadImages: false,
+		//lazy: true,
+
+		// Ефекти
+		effect: "fade",
+		//autoplay: {
+		//	delay: 2000,
+		//	disableOnInteraction: true
+		//},
+
+		// Пагінація
+		/*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+		// Скроллбар
+		/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+		// Кнопки "вліво/вправо"
+		//navigation: {
+		//	prevEl: ".swiper-button-prev",
+		//	nextEl: ".swiper-button-next"
+		//},
+		// Брейкпоінти
+		//breakpoints: {
+		//	320: {
+		//		slidesPerView: 1,
+		//		autoHeight: true
+		//	},
+		//	640: {
+		//		slidesPerView: 2,
+		//		spaceBetween: 20,
+		//		autoHeight: true
+		//	},
+		//	767.98: {
+		//		slidesPerView: 3,
+		//		autoHeight: true
+		//	}
+		//},
+		// Події
+		on: {
+			slideChangeTransitionEnd: ({ activeIndex, slides }) => {
+				document.querySelector(".product-card__image > img").src = slides[
+					activeIndex
+				].querySelector(".product-card__thumbnail").src;
+			}
+		}
+	});
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {

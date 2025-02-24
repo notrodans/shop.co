@@ -1,4 +1,4 @@
-.header-top {
+.top-header {
 	background: #000;
 
 	&__container {
@@ -44,6 +44,20 @@
 
 .header {
 	&__container {
+		.header_line & {
+			position: relative;
+			&::before {
+				position: absolute;
+				content: "";
+				max-width: toRem(1240);
+				width: 100%;
+				height: toRem(1);
+				inset-inline-start: 50%;
+				inset-block-end: 0;
+				transform: translateX(-50%);
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+		}
 		padding-top: toRem(24);
 		padding-bottom: toRem(24);
 	}
