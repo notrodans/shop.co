@@ -297,55 +297,10 @@
 
 	&__wrapper {
 	}
-
 	&__slide {
-		@include adaptiveValue("--padding-x", 32, 24);
-		@include adaptiveValue("--padding-y", 28, 24);
-		padding: var(--padding-x) var(--padding-y);
-		border-radius: toRem(20);
-		border: toRem(1) solid rgba(0, 0, 0, 0.1);
-
 		@media (min-width: $mobile) {
 			aspect-ratio: 400 / 240;
 		}
-	}
-
-	&__rating {
-		&:not(:last-child) {
-			margin-bottom: toRem(15);
-		}
-	}
-
-	&__content {
-	}
-
-	&__author {
-		display: flex;
-		column-gap: toRem(4);
-		align-items: center;
-
-		&:not(:last-child) {
-			margin-bottom: toRem(11.5);
-		}
-
-		p {
-			@include adaptiveValue("font-size", 20, 16);
-			font-weight: 700;
-			line-height: math.div(22, 20);
-		}
-
-		svg {
-			flex: 0 0 toRem(19.5);
-			max-width: toRem(19.5);
-			max-height: toRem(19.5);
-			color: #01ab31;
-		}
-	}
-
-	&__review {
-		@include adaptiveValue("font-size", 16, 14);
-		color: rgba(0, 0, 0, 0.6);
-		line-height: math.div(20, 16);
 	}
 }
 
@@ -437,20 +392,18 @@
 	}
 	&__hehe {
 		display: grid;
-		@include adaptiveValue("column-gap", 20, 12);
-		grid-template-columns: minmax(toRem(110), toRem(170)) minmax(toRem(236), 1fr);
-		grid-auto-flow: column;
+		@include adaptiveValue("gap", 20, 12);
+
+		@media (min-width: $mobileSmall) {
+			grid-template-columns: minmax(toRem(110), toRem(170)) minmax(toRem(210), 1fr);
+		}
 	}
 	&__quantity {
+		align-items: center;
+		justify-content: center;
 	}
 	&__button {
 		flex: 1;
-		padding-block: toRem(16);
-		padding-inline: toRem(10);
-		border-radius: toRem(62);
-		background: #000;
-		color: #fff;
-		font-weight: 500;
 	}
 }
 
@@ -483,8 +436,11 @@
 		position: relative;
 		width: 100%;
 		max-width: toRem(18.75);
+		min-height: (18.75);
+
 		@media (max-width: $mobileSmall) {
 			max-width: toRem(15.625);
+			min-height: (15.626);
 		}
 
 		&--minus {
@@ -524,6 +480,122 @@
 				position: absolute;
 				transform: translateY(-50%) rotate(90deg);
 			}
+		}
+	}
+}
+
+.product-sections__tabs {
+	.tabs {
+		&__navigation {
+			display: flex;
+			position: relative;
+			overflow-x: auto;
+			faq &::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: toRem(1);
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+		}
+		&__title {
+			flex: 1 0 33.333%;
+			padding-block: toRem(24);
+			line-height: math.div(22, 20);
+			position: relative;
+			padding-inline: toRem(15);
+			@include adaptiveValue("font-size", 20, 16);
+			text-wrap-mode: nowrap;
+
+			&:not(._tab-active) {
+				color: rgba(0, 0, 0, 0.6);
+			}
+
+			&._tab-active {
+				font-weight: 500;
+
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 2px;
+					background: #000;
+				}
+			}
+		}
+		&__content {
+			@include adaptiveValue("padding-block", 32, 26);
+		}
+		&__body {
+		}
+	}
+}
+
+.product-reviews {
+	&__header {
+		display: flex;
+		column-gap: toRem(30);
+		align-items: center;
+		flex-wrap: wrap;
+		row-gap: toRem(10);
+		justify-content: space-between;
+
+		&:not(:last-child) {
+			@include adaptiveValue("margin-block-end", 32, 27);
+		}
+	}
+	&__title {
+		@include adaptiveValue("font-size", 24, 20);
+		font-weight: 700;
+
+		span {
+			font-size: toRem(14);
+			line-height: math.div(22, 14);
+			font-weight: 400;
+		}
+	}
+	&__actions {
+	}
+	&__body {
+		display: grid;
+		@include adaptiveValue("gap", 20, 16);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-block-end", 36, 20);
+		}
+
+		@media (min-width: $mobileSmall) {
+			grid-template-columns: repeat(auto-fit, minmax(toRem(475), 1fr));
+		}
+	}
+	&__button {
+		max-width: toRem(218);
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+		text-align: center;
+	}
+}
+
+.actions-products {
+	display: flex;
+	flex-wrap: wrap;
+	gap: toRem(10);
+
+	&__button {
+	}
+
+	&__icon {
+		&_arrow {
+			transform: rotate(90deg);
+		}
+		&_parameters {
+			width: toRem(24);
+			height: toRem(24);
+			color: #fff;
 		}
 	}
 }
