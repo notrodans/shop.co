@@ -105,9 +105,8 @@
 									<div class="product-card__color-picker color-picker">
 										<span class="color-picker__label label">Select Colors</span>
 										<div class="color-picker__options">
-											<label for="olive" class="color-picker__option">
+											<label class="color-picker__option">
 												<input
-													id="olive"
 													value="olive"
 													type="radio"
 													name="color"
@@ -120,28 +119,16 @@
 													</svg>
 												</span>
 											</label>
-											<label for="teal" class="color-picker__option">
-												<input
-													id="teal"
-													value="teal"
-													type="radio"
-													name="color"
-													class="color-picker__input"
-												/>
+											<label class="color-picker__option">
+												<input value="teal" type="radio" name="color" class="color-picker__input" />
 												<span class="color-picker__circle color-picker__circle--teal">
 													<svg class="color-picker__icon" viewBox="0 0 24 24">
 														<path d="M5 12l4 4L19 7" stroke="white" stroke-width="2" fill="none" />
 													</svg>
 												</span>
 											</label>
-											<label for="navy" class="color-picker__option">
-												<input
-													id="navy"
-													value="navy"
-													type="radio"
-													name="color"
-													class="color-picker__input"
-												/>
+											<label class="color-picker__option">
+												<input value="navy" type="radio" name="color" class="color-picker__input" />
 												<span class="color-picker__circle color-picker__circle--navy">
 													<svg class="color-picker__icon" viewBox="0 0 24 24">
 														<path d="M5 12l4 4L19 7" stroke="white" stroke-width="2" fill="none" />
@@ -154,9 +141,8 @@
 									<div class="product-card__size-picker size-picker">
 										<span class="size-picker__label label">Choose Size</span>
 										<div class="size-picker__options">
-											<label for="small" class="size-picker__option">
+											<label class="size-picker__option">
 												<input
-													id="small"
 													value="small"
 													type="radio"
 													name="size"
@@ -165,29 +151,16 @@
 												/>
 												<span class="size-picker__text"> Small </span>
 											</label>
-											<label for="medium" class="size-picker__option">
-												<input
-													id="medium"
-													value="medium"
-													type="radio"
-													name="size"
-													class="size-picker__input"
-												/>
+											<label class="size-picker__option">
+												<input value="medium" type="radio" name="size" class="size-picker__input" />
 												<span class="size-picker__text"> Medium </span>
 											</label>
-											<label for="large" class="size-picker__option">
-												<input
-													id="large"
-													value="large"
-													type="radio"
-													name="size"
-													class="size-picker__input"
-												/>
+											<label class="size-picker__option">
+												<input value="large" type="radio" name="size" class="size-picker__input" />
 												<span class="size-picker__text"> Large </span>
 											</label>
-											<label for="x-large" class="size-picker__option">
+											<label class="size-picker__option">
 												<input
-													id="x-large"
 													value="x-large"
 													type="radio"
 													name="size"
@@ -198,8 +171,32 @@
 										</div>
 									</div>
 									<hr class="separator" />
-									<div class="product-card__quantity"></div>
-									<button type="submit" class="product-card__button">Add to Cart</button>
+									<div class="product-card__hehe">
+										<div data-quantity class="product-card__quantity quantity-product">
+											<button
+												data-quantity-minus
+												type="button"
+												class="quantity-product__button quantity-product__button--minus"
+											></button>
+											<div class="quantity-product__input">
+												<input
+													data-quantity-value="1"
+													data-quantity-min="1"
+													data-quantity-max="999"
+													autocomplete="off"
+													type="text"
+													name="quantity"
+													value="1"
+												/>
+											</div>
+											<button
+												data-quantity-plus
+												type="button"
+												class="quantity-product__button quantity-product__button--plus"
+											></button>
+										</div>
+										<button type="submit" class="product-card__button">Add to Cart</button>
+									</div>
 								</form>
 							</div>
 						</div>

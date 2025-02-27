@@ -355,26 +355,40 @@
 
 	&__container {
 		justify-content: space-between;
-		display: grid;
-		grid-template-columns: minmax(toRem(440), toRem(610)) minmax(toRem(440), toRem(600));
 		row-gap: toRem(20);
-		@include adaptiveValue("column-gap", 40, 15, 2, $containerWidth, 768);
+		display: grid;
+		@include adaptiveValue("column-gap", 40, 15, $containerWidth, 767.98);
+
+		@media (min-width: $mobile) {
+			grid-template-columns: 50% 1fr;
+		}
 	}
 
 	&__start {
 		display: flex;
-		column-gap: toRem(14);
+		flex-direction: column-reverse;
+		row-gap: toRem(12);
+
+		@media (min-width: $tablet) {
+			align-self: flex-start;
+			justify-content: space-between;
+			flex-direction: row;
+			column-gap: toRem(14);
+			max-height: toRem(530);
+		}
 	}
 	&__end {
 	}
 	&__thumbnails {
-		padding-block: toRem(6);
-		flex-shrink: 0;
-		max-width: toRem(162);
+		@include adaptiveValue("max-height", 160, 106, 3, 991.98, 474.98);
+		@media (min-width: $mobile) {
+			padding-block: toRem(6);
+		}
 	}
 	&__wrapper {
 	}
 	&__slide {
+		aspect-ratio: 152 / 168;
 	}
 	&__thumbnail {
 		border-radius: toRem(20);
@@ -384,9 +398,17 @@
 		}
 	}
 	&__image {
-		aspect-ratio: 443/530;
-		width: 100%;
-		height: 100%;
+		flex: 1 1 auto;
+		aspect-ratio: 358/290;
+		height: max-content;
+
+		@media (min-width: $mobile) {
+			flex: 0 1 71.62%;
+			aspect-ratio: 444/530;
+		}
+
+		@media (max-width: $mobile) {
+		}
 
 		img {
 			border-radius: toRem(20);
@@ -413,12 +435,96 @@
 		line-height: math.div(22, 16);
 		color: rgba(0, 0, 0, 0.6);
 	}
+	&__hehe {
+		display: grid;
+		@include adaptiveValue("column-gap", 20, 12);
+		grid-template-columns: minmax(toRem(110), toRem(170)) minmax(toRem(236), 1fr);
+		grid-auto-flow: column;
+	}
+	&__quantity {
+	}
 	&__button {
-		padding: toRem(16) toRem(64);
+		flex: 1;
+		padding-block: toRem(16);
+		padding-inline: toRem(10);
 		border-radius: toRem(62);
 		background: #000;
 		color: #fff;
 		font-weight: 500;
+	}
+}
+
+.quantity-product {
+	background: #f0f0f0;
+	border-radius: toRem(62);
+	display: flex;
+	column-gap: toRem(10);
+	max-width: 100%;
+	row-gap: toRem(20);
+	@include adaptiveValue("padding-block", 20, 12);
+	@include adaptiveValue("padding-inline", 22, 16);
+
+	@media (max-width: $mobileSmall) {
+		font-size: toRem(14);
+	}
+
+	&__input {
+		input {
+			text-align: center;
+			font-weight: 500;
+			height: 100%;
+		}
+		flex: 0 1 toRem(60);
+		align-items: center;
+	}
+	&__quantity {
+	}
+	&__button {
+		position: relative;
+		width: 100%;
+		max-width: toRem(18.75);
+		@media (max-width: $mobileSmall) {
+			max-width: toRem(15.625);
+		}
+
+		&--minus {
+			&::before {
+				position: absolute;
+				transform: translateY(-50%);
+				top: 50%;
+				left: 0;
+				content: "";
+				width: 100%;
+				height: toRem(2.25);
+				@media (max-width: $mobileSmall) {
+					height: toRem(1.875);
+				}
+				background: #000;
+			}
+		}
+
+		&--plus {
+			&::before,
+			&::after {
+				position: absolute;
+				transform: translateY(-50%);
+				top: 50%;
+				left: 0;
+				content: "";
+				width: 100%;
+				background: #000;
+				border-radius: toRem(40);
+				height: toRem(2.25);
+				@media (max-width: $mobileSmall) {
+					height: toRem(1.875);
+				}
+			}
+
+			&::after {
+				position: absolute;
+				transform: translateY(-50%) rotate(90deg);
+			}
+		}
 	}
 }
 

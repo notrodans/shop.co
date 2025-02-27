@@ -145,7 +145,7 @@
 	}
 
 	&--sl {
-		@include adaptiveValue("font-size", 40, 24, 2, $containerWidth, 768);
+		@include adaptiveValue("font-size", 38, 24, 2, $containerWidth, 768);
 	}
 }
 

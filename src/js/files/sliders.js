@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from "swiper";
-import { Navigation, Autoplay, Mousewheel } from "swiper/modules";
+import { Navigation, Autoplay, Mousewheel, EffectFade } from "swiper/modules";
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -105,13 +105,10 @@ function initSliders() {
 		// Підключаємо модулі слайдера
 		// для конкретного випадку
 		modules: [Navigation, Autoplay, Mousewheel],
-		direction: "vertical",
 		mousewheel: {
 			enabled: true,
 		},
-		slidesPerView: 3,
-		spaceBetween: 8,
-		autoHeight: true,
+        slidesPerView: "auto",
     loop: true,
 		speed: 300,
 		//initialSlide: 0,
@@ -124,7 +121,7 @@ function initSliders() {
 		//lazy: true,
 
 		// Ефекти
-		effect: "fade",
+		//effect: "fade",
 		//autoplay: {
 		//	delay: 2000,
 		//	disableOnInteraction: true
@@ -151,22 +148,28 @@ function initSliders() {
 		//	prevEl: ".swiper-button-prev",
 		//	nextEl: ".swiper-button-next"
 		//},
-		// Брейкпоінти
-		//breakpoints: {
-		//	320: {
-		//		slidesPerView: 1,
-		//		autoHeight: true
-		//	},
-		//	640: {
-		//		slidesPerView: 2,
-		//		spaceBetween: 20,
-		//		autoHeight: true
-		//	},
-		//	767.98: {
-		//		slidesPerView: 3,
-		//		autoHeight: true
-		//	}
-		//},
+		 //Брейкпоінти
+		breakpoints: {
+			320: {
+        //slidesPerView: 6,
+				autoHeight: false,
+        spaceBetween: 12,
+        slidesPerView: "auto",
+        direction: "horizontal",
+      },
+      767.98: {
+				autoHeight: false,
+        spaceBetween: 12,
+        slidesPerView: "auto",
+        direction: "horizontal",
+    },
+      991.98: {
+				autoHeight: true,
+        direction: "vertical",
+        spaceBetween: 8,
+        slidesPerView: "3"
+    }
+		},
 		// Події
 		on: {
 			slideChangeTransitionEnd: ({ activeIndex, slides }) => {
