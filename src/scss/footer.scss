@@ -34,7 +34,7 @@
 
 	&__stay-up {
 		@media (min-width: toEm($containerWidth)) {
-			margin-top: calc(var(--h) * -0.5px);
+			margin-top: toRem(-90);
 		}
 
 		@include adaptiveValue("margin-bottom", 50, 32);

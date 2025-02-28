@@ -1,47 +1,32 @@
 // Підключення з node_modules
 import * as noUiSlider from "nouislider";
+import wNumb from "wnumb";
 
 // Підключення стилів з scss/base/forms/range.scss
 // у файлі scss/forms/forms.scss
 
-// Підключення стилів з node_modules
-import "nouislider/dist/nouislider.css";
+function rangeInit() {
+	const priceSlider = document.querySelector("#price-slider");
+	const priceStartValue = document.getElementById("price-start")?.value;
+	const priceEndValue = document.getElementById("price-end")?.value;
 
-export function rangeInit() {
-	const priceSlider = document.querySelector("#range");
 	if (priceSlider) {
 		let textFrom = priceSlider.getAttribute("data-from");
 		let textTo = priceSlider.getAttribute("data-to");
 		noUiSlider.create(priceSlider, {
-			start: 0, // [0,200000]
-			connect: [true, false],
+			connect: true,
+			start: [Number(priceStartValue), Number(priceEndValue)],
 			range: {
-				min: [0],
-				max: [200000]
-			}
-			/*
+				min: [Number(priceStartValue)],
+				max: [Number(priceEndValue)]
+			},
+			tooltips: true,
 			format: wNumb({
-				decimals: 0
+				decimals: 0,
+				prefix: "$"
 			})
-			*/
 		});
-		/*
-		const priceStart = document.getElementById('price-start');
-		const priceEnd = document.getElementById('price-end');
-		priceStart.addEventListener('change', setPriceValues);
-		priceEnd.addEventListener('change', setPriceValues);
-		*/
-		function setPriceValues() {
-			let priceStartValue;
-			let priceEndValue;
-			if (priceStart.value != "") {
-				priceStartValue = priceStart.value;
-			}
-			if (priceEnd.value != "") {
-				priceEndValue = priceEnd.value;
-			}
-			priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
-		}
 	}
 }
+
 rangeInit();

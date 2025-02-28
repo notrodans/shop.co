@@ -45,7 +45,7 @@ import * as flsFunctions from "./files/functions.js";
 Документація: https://template.fls.guru/template-docs/modul-spojlery.html
 Сніппет (HTML): spollers
 */
-// flsFunctions.spollers();
+flsFunctions.spollers();
 
 /*
 Модуль "Таби"
@@ -120,7 +120,7 @@ flsForms.formFieldsInit({
 // flsForms.formSubmit();
 
 /* Модуль форми "кількість" */
- flsForms.formQuantity();
+flsForms.formQuantity();
 
 /* Модуль зіркового рейтингу */
 flsForms.formRating();
@@ -147,7 +147,7 @@ flsForms.formRating();
 Документація плагіна: https://refreshless.com/nouislider/
 Сніппет (HTML): range
 */
- import "./files/forms/range.js";
+import "./files/forms/range.js";
 
 /* Модуль роботи з підказками (tippy) */
 /*
@@ -203,7 +203,6 @@ import "./files/sliders.js";
 // import './libs/parallax.js'
 
 // Функції роботи скролом
-import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавна навігація по сторінці
 // Документація: https://template.fls.guru/template-docs/modul-plavnoj-navigacii-po-stranice.html

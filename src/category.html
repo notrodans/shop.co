@@ -1,0 +1,589 @@
+<!doctype html>
+
+<html lang="en">
+	@@include('html/_head.htm',{ "title":"Category" })
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{"line": "header_line"})
+			<main class="page">
+				<nav class="breadcrumbs">
+					<div class="breadcrumbs__container">
+						<span class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="#">Home</a>
+							<i class="_icon-arrowx"></i>
+						</span>
+						<span class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="#">Casual</a>
+						</span>
+					</div>
+				</nav>
+				<section class="page__category category">
+					<div class="category__container">
+						<aside class="category__filters filters-category">
+							<form class="filters-category__form" method="get">
+								<div class="filters-category__header">
+									<div class="filters-category__title filters-title">Filters</div>
+									<button type="button" class="filters-category__button">
+										<svg class="filters-category__icon">
+											<use xlink:href="@img/icons/icons.svg#parameters"></use>
+										</svg>
+									</button>
+								</div>
+								<hr class="separator separator--x" />
+								<div data-spollers class="filters-category__spollers spollers">
+									<details data-open class="spollers__item">
+										<summary class="spollers__title filters-title">Category</summary>
+										<div class="spollers__body">
+											<ul class="list-filters">
+												<li class="list-filters__item">
+													<label class="list-filters__label">
+														<span class="list-filters__text">T-shirts</span>
+														<input
+															class="list-filters__input"
+															value="t-shirts"
+															type="radio"
+															name="category"
+														/>
+													</label>
+												</li>
+												<li class="list-filters__item">
+													<label class="list-filters__label">
+														<span class="list-filters__text">Shorts</span>
+														<input
+															class="list-filters__input"
+															value="shorts"
+															type="radio"
+															name="category"
+														/>
+													</label>
+												</li>
+												<li class="list-filters__item">
+													<label class="list-filters__label">
+														<span class="list-filters__text">Shirts</span>
+														<input
+															class="list-filters__input"
+															value="shirts"
+															type="radio"
+															name="category"
+														/>
+													</label>
+												</li>
+												<li class="list-filters__item">
+													<label class="list-filters__label">
+														<span class="list-filters__text">Hoodie</span>
+														<input
+															class="list-filters__input"
+															value="hoodie"
+															type="radio"
+															name="category"
+														/>
+													</label>
+												</li>
+												<li class="list-filters__item">
+													<label class="list-filters__label">
+														<span class="list-filters__text">Jeans</span>
+														<input
+															class="list-filters__input"
+															value="jeans"
+															type="radio"
+															name="category"
+														/>
+													</label>
+												</li>
+											</ul>
+										</div>
+									</details>
+								</div>
+								<hr class="separator separator--x" />
+								<div data-spollers class="filters-category__spollers spollers">
+									<details data-open class="spollers__item">
+										<summary class="spollers__title filters-title">Price</summary>
+										<div class="spollers__body">
+											<div id="price-slider"></div>
+											<input value="0" type="text" style="display: none" id="price-start" />
+											<input value="200" type="text" style="display: none" id="price-end" />
+										</div>
+									</details>
+								</div>
+								<hr class="separator separator--x" />
+								<div data-spollers class="filters-category__spollers spollers">
+									<details data-open class="spollers__item">
+										<summary class="spollers__title filters-title">Colors</summary>
+										<div class="spollers__body">
+											<div class="color-picker color-picker--border">
+												<div class="color-picker__options">
+													<label class="color-picker__option">
+														<input
+															value="olive"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+															checked
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#00C12B" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+													<label class="color-picker__option">
+														<input
+															value="teal"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#F50606" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+													<label class="color-picker__option">
+														<input
+															value="navy"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#F5DD06" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+													<label class="color-picker__option">
+														<input
+															value="navy"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#F57906" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+													<label class="color-picker__option">
+														<input
+															value="navy"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#06CAF5" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+													<label class="color-picker__option">
+														<input
+															value="navy"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#063AF5" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+													<label class="color-picker__option">
+														<input
+															value="navy"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#7D06F5" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+													<label class="color-picker__option">
+														<input
+															value="navy"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#F506A4" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+													<label class="color-picker__option">
+														<input
+															value="navy"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#FFFFFF" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+													<label class="color-picker__option">
+														<input
+															value="navy"
+															type="radio"
+															name="color"
+															class="color-picker__input"
+														/>
+														<span class="color-picker__circle">
+															<svg class="color-picker__fill" viewBox="0 0 24 24">
+																<circle cx="12" cy="12" r="12" fill="#000000" />
+															</svg>
+															<svg class="color-picker__checkmark">
+																<use xlink:href="@img/icons/icons.svg#checkmark"></use>
+															</svg>
+														</span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</details>
+								</div>
+								<hr class="separator separator--x" />
+								<div data-spollers class="filters-category__spollers spollers">
+									<details data-open class="spollers__item">
+										<summary class="spollers__title filters-title">Size</summary>
+										<div class="spollers__body">
+											<div class="size-picker">
+												<div class="size-picker__options">
+													<label class="size-picker__option">
+														<input
+															value="small"
+															type="radio"
+															name="size"
+															class="size-picker__input"
+															checked
+														/>
+														<span class="size-picker__text"> Small </span>
+													</label>
+													<label class="size-picker__option">
+														<input
+															value="medium"
+															type="radio"
+															name="size"
+															class="size-picker__input"
+														/>
+														<span class="size-picker__text"> Medium </span>
+													</label>
+													<label class="size-picker__option">
+														<input
+															value="large"
+															type="radio"
+															name="size"
+															class="size-picker__input"
+														/>
+														<span class="size-picker__text"> Large </span>
+													</label>
+													<label class="size-picker__option">
+														<input
+															value="x-large"
+															type="radio"
+															name="size"
+															class="size-picker__input"
+														/>
+														<span class="size-picker__text"> X-Large </span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</details>
+								</div>
+								<hr class="separator separator--x" />
+								<div data-spollers class="filters-category__spollers spollers">
+									<details data-open class="spollers__item">
+										<summary class="spollers__title filters-title">Dress Style</summary>
+										<div class="spollers__body">
+											<ul class="list-filters">
+												<li class="list-filters__item">
+													<label class="list-filters__label">
+														<span class="list-filters__text">Casual</span>
+														<input
+															class="list-filters__input"
+															value="casiaul"
+															type="radio"
+															name="style"
+														/>
+													</label>
+												</li>
+												<li class="list-filters__item">
+													<label class="list-filters__label">
+														<span class="list-filters__text">Formal</span>
+														<input
+															class="list-filters__input"
+															value="formal"
+															type="radio"
+															name="style"
+														/>
+													</label>
+												</li>
+												<li class="list-filters__item">
+													<label class="list-filters__label">
+														<span class="list-filters__text">Party</span>
+														<input
+															class="list-filters__input"
+															value="party"
+															type="radio"
+															name="style"
+														/>
+													</label>
+												</li>
+												<li class="list-filters__item">
+													<label class="list-filters__label">
+														<span class="list-filters__text">Gym</span>
+														<input
+															class="list-filters__input"
+															value="gym"
+															type="radio"
+															name="style"
+														/>
+													</label>
+												</li>
+											</ul>
+										</div>
+									</details>
+								</div>
+								<button type="submit" class="filters-category__submit button">Apply Filter</button>
+							</form>
+						</aside>
+						<div class="category__body body-category">
+							<div class="body-category__header">
+								<h2 class="body-category__title">Casual</h2>
+								<div class="body-category__actions">
+									<p class="body-category__text">Showing 1-10 of 100 Products</p>
+									<div class="body-category__sort">Sort by: <span> Most Popular</span></div>
+								</div>
+							</div>
+							<div class="body-category__products blocks-products">
+								<div class="product-block">
+									<a href="#" class="product-block__link"
+										><img
+											class="product-block__image ibg ibg--contain"
+											src="@img/products/jeans.png"
+											alt="@@alt"
+									/></a>
+									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<div class="product-block__rating block-rating">
+										<div data-rating data-rating-value="4.5" class="rating"></div>
+										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+									</div>
+									<div class="product-block__prices prices">
+										<span class="prices__current">$210</span>
+									</div>
+								</div>
+								<div class="product-block">
+									<a href="#" class="product-block__link"
+										><img
+											class="product-block__image ibg ibg--contain"
+											src="@img/products/jeans.png"
+											alt="@@alt"
+									/></a>
+									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<div class="product-block__rating block-rating">
+										<div data-rating data-rating-value="4.5" class="rating"></div>
+										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+									</div>
+									<div class="product-block__prices prices">
+										<span class="prices__current">$210</span>
+									</div>
+								</div>
+								<div class="product-block">
+									<a href="#" class="product-block__link"
+										><img
+											class="product-block__image ibg ibg--contain"
+											src="@img/products/jeans.png"
+											alt="@@alt"
+									/></a>
+									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<div class="product-block__rating block-rating">
+										<div data-rating data-rating-value="4.5" class="rating"></div>
+										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+									</div>
+									<div class="product-block__prices prices">
+										<span class="prices__current">$210</span>
+									</div>
+								</div>
+								<div class="product-block">
+									<a href="#" class="product-block__link"
+										><img
+											class="product-block__image ibg ibg--contain"
+											src="@img/products/jeans.png"
+											alt="@@alt"
+									/></a>
+									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<div class="product-block__rating block-rating">
+										<div data-rating data-rating-value="4.5" class="rating"></div>
+										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+									</div>
+									<div class="product-block__prices prices">
+										<span class="prices__current">$210</span>
+									</div>
+								</div>
+								<div class="product-block">
+									<a href="#" class="product-block__link"
+										><img
+											class="product-block__image ibg ibg--contain"
+											src="@img/products/jeans.png"
+											alt="@@alt"
+									/></a>
+									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<div class="product-block__rating block-rating">
+										<div data-rating data-rating-value="4.5" class="rating"></div>
+										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+									</div>
+									<div class="product-block__prices prices">
+										<span class="prices__current">$210</span>
+									</div>
+								</div>
+								<div class="product-block">
+									<a href="#" class="product-block__link"
+										><img
+											class="product-block__image ibg ibg--contain"
+											src="@img/products/jeans.png"
+											alt="@@alt"
+									/></a>
+									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<div class="product-block__rating block-rating">
+										<div data-rating data-rating-value="4.5" class="rating"></div>
+										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+									</div>
+									<div class="product-block__prices prices">
+										<span class="prices__current">$210</span>
+									</div>
+								</div>
+								<div class="product-block">
+									<a href="#" class="product-block__link"
+										><img
+											class="product-block__image ibg ibg--contain"
+											src="@img/products/jeans.png"
+											alt="@@alt"
+									/></a>
+									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<div class="product-block__rating block-rating">
+										<div data-rating data-rating-value="4.5" class="rating"></div>
+										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+									</div>
+									<div class="product-block__prices prices">
+										<span class="prices__current">$210</span>
+									</div>
+								</div>
+								<div class="product-block">
+									<a href="#" class="product-block__link"
+										><img
+											class="product-block__image ibg ibg--contain"
+											src="@img/products/jeans.png"
+											alt="@@alt"
+									/></a>
+									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<div class="product-block__rating block-rating">
+										<div data-rating data-rating-value="4.5" class="rating"></div>
+										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+									</div>
+									<div class="product-block__prices prices">
+										<span class="prices__current">$210</span>
+									</div>
+								</div>
+								<div class="product-block">
+									<a href="#" class="product-block__link"
+										><img
+											class="product-block__image ibg ibg--contain"
+											src="@img/products/jeans.png"
+											alt="@@alt"
+									/></a>
+									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<div class="product-block__rating block-rating">
+										<div data-rating data-rating-value="4.5" class="rating"></div>
+										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
+									</div>
+									<div class="product-block__prices prices">
+										<span class="prices__current">$210</span>
+									</div>
+								</div>
+							</div>
+							<hr class="separator" />
+							<div class="body-category__pagination pagination">
+								<button
+									type="button"
+									class="pagination__button pagination__button--prev button button--bold button--rounded-xs button--padding-xs button--outline button--icon button--icon-left"
+								>
+									<span> Previous </span>
+									<i class="pagination__icon _icon-arrow"></i>
+								</button>
+								<ul class="pagination__pages">
+									<li class="pagination__item">
+										<a href="#" class="pagination__link pagination__link--active">1</a>
+									</li>
+									<li class="pagination__item">
+										<a href="#" class="pagination__link">2</a>
+									</li>
+									<li class="pagination__item">
+										<a href="#" class="pagination__link">3</a>
+									</li>
+									<li class="pagination__item">
+										<input class="pagination__input" placeholder="..." type="text" />
+									</li>
+									<li class="pagination__item">
+										<a href="#" class="pagination__link">8</a>
+									</li>
+									<li class="pagination__item">
+										<a href="#" class="pagination__link">9</a>
+									</li>
+									<li class="pagination__item">
+										<a href="#" class="pagination__link">10</a>
+									</li>
+								</ul>
+								<button
+									type="button"
+									class="pagination__button pagination__button--next button button--bold button--rounded-xs button--padding-xs button--outline button--icon button--icon"
+								>
+									<span> Next </span>
+									<i class="pagination__icon _icon-arrow"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

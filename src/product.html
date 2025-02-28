@@ -1,7 +1,7 @@
 <!doctype html>
 
 <html lang="en">
-	@@include('html/_head.htm',{ "title":"HomePage" })
+	@@include('html/_head.htm',{ "title":"Product Page" })
 	<body>
 		<div class="wrapper">
 			@@include('html/_header.htm', {"line": "header_line"})
@@ -112,25 +112,34 @@
 													class="color-picker__input"
 													checked
 												/>
-												<span class="color-picker__circle color-picker__circle--olive">
-													<svg class="color-picker__icon" viewBox="0 0 24 24">
-														<path d="M5 12l4 4L19 7" stroke="white" stroke-width="2" fill="none" />
+												<span class="color-picker__circle">
+													<svg class="color-picker__fill" viewBox="0 0 24 24">
+														<circle cx="12" cy="12" r="12" fill="#554a2f" />
+													</svg>
+													<svg class="color-picker__checkmark">
+														<use xlink:href="@img/icons/icons.svg#checkmark"></use>
 													</svg>
 												</span>
 											</label>
 											<label class="color-picker__option">
 												<input value="teal" type="radio" name="color" class="color-picker__input" />
-												<span class="color-picker__circle color-picker__circle--teal">
-													<svg class="color-picker__icon" viewBox="0 0 24 24">
-														<path d="M5 12l4 4L19 7" stroke="white" stroke-width="2" fill="none" />
+												<span class="color-picker__circle">
+													<svg class="color-picker__fill" viewBox="0 0 24 24">
+														<circle cx="12" cy="12" r="12" fill="#294b44" />
+													</svg>
+													<svg class="color-picker__checkmark">
+														<use xlink:href="@img/icons/icons.svg#checkmark"></use>
 													</svg>
 												</span>
 											</label>
 											<label class="color-picker__option">
 												<input value="navy" type="radio" name="color" class="color-picker__input" />
-												<span class="color-picker__circle color-picker__circle--navy">
-													<svg class="color-picker__icon" viewBox="0 0 24 24">
-														<path d="M5 12l4 4L19 7" stroke="white" stroke-width="2" fill="none" />
+												<span class="color-picker__circle">
+													<svg class="color-picker__fill" viewBox="0 0 24 24">
+														<circle cx="12" cy="12" r="12" fill="#2d2f4a" />
+													</svg>
+													<svg class="color-picker__checkmark">
+														<use xlink:href="@img/icons/icons.svg#checkmark"></use>
 													</svg>
 												</span>
 											</label>
@@ -401,69 +410,69 @@
 					<div class="products__container">
 						<h2 class="products__title title title--center">YOU MIGHT ALSO LIKE</h2>
 						<div class="products__blocks blocks-products">
-							<div class="blocks-products__block">
-								<a href="#" class="blocks-products__link"
+							<div class="product-block">
+								<a href="#" class="product-block__link"
 									><img
-										class="blocks-products__image ibg ibg--contain"
+										class="product-block__image ibg ibg--contain"
 										src="@img/products/t-shirt.png"
 										alt="@@alt"
 								/></a>
-								<a class="blocks-products__title" href="#">Vertical Striped Shirt</a>
-								<div class="blocks-products__rating block-rating">
+								<a class="product-block__title" href="#">Vertical Striped Shirt</a>
+								<div class="product-block__rating rating-block">
 									<div data-rating data-rating-value="5" class="rating"></div>
 									<div class="block-rating__grade"><span>5.0</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices prices">
+								<div class="product-block__prices prices">
 									<span class="prices__current">$212</span>
 									<span class="prices__old">$232</span>
 									<span class="prices__discount">-20%</span>
 								</div>
 							</div>
-							<div class="blocks-products__block">
-								<a href="#" class="blocks-products__link"
+							<div class="product-block">
+								<a href="#" class="product-block__link"
 									><img
-										class="blocks-products__image ibg ibg--contain"
+										class="product-block__image ibg ibg--contain"
 										src="@img/products/t-shirt2.png"
 										alt="@@alt"
 								/></a>
-								<a class="blocks-products__title" href="#">Courage Graphic T-shirt</a>
-								<div class="blocks-products__rating block-rating">
+								<a class="product-block__title" href="#">Courage Graphic T-shirt</a>
+								<div class="product-block__rating block-rating">
 									<div data-rating data-rating-value="4" class="rating"></div>
 									<div class="block-rating__grade"><span>4</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices prices">
+								<div class="product-block__prices prices">
 									<span class="prices__current">$145</span>
 								</div>
 							</div>
-							<div class="blocks-products__block">
-								<a href="#" class="blocks-products__link"
+							<div class="product-block">
+								<a href="#" class="product-block__link"
 									><img
-										class="blocks-products__image ibg ibg--contain"
+										class="product-block__image ibg ibg--contain"
 										src="@img/products/shorts.png"
 										alt="@@alt"
 								/></a>
-								<a class="blocks-products__title" href="#">Loose Fit Bermuda Shorts</a>
-								<div class="blocks-products__rating block-rating">
+								<a class="product-block__title" href="#">Loose Fit Bermuda Shorts</a>
+								<div class="product-block__rating block-rating">
 									<div data-rating data-rating-value="3" class="rating"></div>
 									<div class="block-rating__grade"><span>3.0</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices prices">
+								<div class="product-block__prices prices">
 									<span class="prices__current">$80</span>
 								</div>
 							</div>
-							<div class="blocks-products__block">
-								<a href="#" class="blocks-products__link"
+							<div class="product-block">
+								<a href="#" class="product-block__link"
 									><img
-										class="blocks-products__image ibg ibg--contain"
+										class="product-block__image ibg ibg--contain"
 										src="@img/products/jeans.png"
 										alt="@@alt"
 								/></a>
-								<a class="blocks-products__title" href="#">Faded Skinny Jeans</a>
-								<div class="blocks-products__rating block-rating">
+								<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+								<div class="product-block__rating block-rating">
 									<div data-rating data-rating-value="4.5" class="rating"></div>
 									<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
 								</div>
-								<div class="blocks-products__prices prices">
+								<div class="product-block__prices prices">
 									<span class="prices__current">$210</span>
 								</div>
 							</div>
