@@ -36,9 +36,9 @@ import * as flsFunctions from "./files/functions.js";
 /* Додавання loaded для HTML після повного завантаження сторінки */
 // flsFunctions.addLoadedClass();
 /* Модуль для роботи з меню (Бургер) */
-// flsFunctions.menuInit();
+flsFunctions.menuInit();
 /* Форматування чисел */
-// import './libs/wNumb.min.js';
+import "./libs/wNumb.min.js";
 
 /*
 Модуль "Спойлери"
@@ -94,7 +94,7 @@ flsFunctions.tabs();
 Документація: https://template.fls.guru/template-docs/funkcional-popup.html
 Сніппет (HTML): pl, pop
 */
-// import './libs/popup.js'
+import "./libs/popup.js";
 
 /*
 Модуль паралаксу мишею
@@ -126,7 +126,7 @@ flsForms.formQuantity();
 flsForms.formRating();
 
 /* Модуль роботи з select. */
-//import "./libs/select.js";
+import "./libs/select.js";
 
 /* Модуль роботи з календарем */
 // import './files/forms/datepicker.js'
@@ -248,7 +248,7 @@ import "./files/sliders.js";
 
 /* Динамічний адаптив */
 // Документація: https://template.fls.guru/template-docs/dinamicheskij-adaptiv.html
-// import "./libs/dynamic_adapt.js";
+import "./libs/dynamic_adapt.js";
 
 // ========================================================================================================================================================================================================================================================
 // Інше ========================================================================================================================================================================================================================================================

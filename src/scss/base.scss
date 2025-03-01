@@ -142,3 +142,10 @@
 		display: none;
 	}
 }
+
+.visibility-hidden {
+	visibility: hidden;
+	font-size: 0;
+	width: 0;
+	height: 0;
+}

@@ -20,7 +20,7 @@
 				<section class="page__category category">
 					<div class="category__container">
 						<aside class="category__filters filters-category">
-							<form class="filters-category__form" method="get">
+							<form id="filters" class="filters-category__form" method="get">
 								<div class="filters-category__header">
 									<div class="filters-category__title filters-title">Filters</div>
 									<button type="button" class="filters-category__button">
@@ -29,7 +29,7 @@
 										</svg>
 									</button>
 								</div>
-								<hr class="separator separator--x" />
+								<hr class="separator" />
 								<div data-spollers class="filters-category__spollers spollers">
 									<details data-open class="spollers__item">
 										<summary class="spollers__title filters-title">Category</summary>
@@ -94,18 +94,18 @@
 										</div>
 									</details>
 								</div>
-								<hr class="separator separator--x" />
+								<hr class="separator" />
 								<div data-spollers class="filters-category__spollers spollers">
 									<details data-open class="spollers__item">
 										<summary class="spollers__title filters-title">Price</summary>
 										<div class="spollers__body">
-											<div id="price-slider"></div>
-											<input value="0" type="text" style="display: none" id="price-start" />
-											<input value="200" type="text" style="display: none" id="price-end" />
+											<div data-from="0" data-to="200" id="price-slider"></div>
+											<input id="price-start" value="0" name="min" type="text" hidden />
+											<input id="price-end" value="200" name="max" type="text" hidden />
 										</div>
 									</details>
 								</div>
-								<hr class="separator separator--x" />
+								<hr class="separator" />
 								<div data-spollers class="filters-category__spollers spollers">
 									<details data-open class="spollers__item">
 										<summary class="spollers__title filters-title">Colors</summary>
@@ -114,7 +114,7 @@
 												<div class="color-picker__options">
 													<label class="color-picker__option">
 														<input
-															value="olive"
+															value="green"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -131,7 +131,7 @@
 													</label>
 													<label class="color-picker__option">
 														<input
-															value="teal"
+															value="red"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -147,7 +147,7 @@
 													</label>
 													<label class="color-picker__option">
 														<input
-															value="navy"
+															value="yellow"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -163,7 +163,7 @@
 													</label>
 													<label class="color-picker__option">
 														<input
-															value="navy"
+															value="orange"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -179,7 +179,7 @@
 													</label>
 													<label class="color-picker__option">
 														<input
-															value="navy"
+															value="aqua"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -195,7 +195,7 @@
 													</label>
 													<label class="color-picker__option">
 														<input
-															value="navy"
+															value="blue"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -211,7 +211,7 @@
 													</label>
 													<label class="color-picker__option">
 														<input
-															value="navy"
+															value="purple"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -227,7 +227,7 @@
 													</label>
 													<label class="color-picker__option">
 														<input
-															value="navy"
+															value="pink"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -243,7 +243,7 @@
 													</label>
 													<label class="color-picker__option">
 														<input
-															value="navy"
+															value="white"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -259,7 +259,7 @@
 													</label>
 													<label class="color-picker__option">
 														<input
-															value="navy"
+															value="black"
 															type="radio"
 															name="color"
 															class="color-picker__input"
@@ -278,7 +278,7 @@
 										</div>
 									</details>
 								</div>
-								<hr class="separator separator--x" />
+								<hr class="separator" />
 								<div data-spollers class="filters-category__spollers spollers">
 									<details data-open class="spollers__item">
 										<summary class="spollers__title filters-title">Size</summary>
@@ -327,7 +327,7 @@
 										</div>
 									</details>
 								</div>
-								<hr class="separator separator--x" />
+								<hr class="separator" />
 								<div data-spollers class="filters-category__spollers spollers">
 									<details data-open class="spollers__item">
 										<summary class="spollers__title filters-title">Dress Style</summary>
@@ -389,7 +389,15 @@
 								<h2 class="body-category__title">Casual</h2>
 								<div class="body-category__actions">
 									<p class="body-category__text">Showing 1-10 of 100 Products</p>
-									<div class="body-category__sort">Sort by: <span> Most Popular</span></div>
+									<div class="body-category__sort">
+										<span> Sort by: </span>
+										<select form="filters" name="sort">
+											<option value="popular" selected>Most Popular</option>
+											<option value="newest">Newest</option>
+											<option value="oldest">Oldest</option>
+											<option value="rating">Rating</option>
+										</select>
+									</div>
 								</div>
 							</div>
 							<div class="body-category__products blocks-products">
@@ -400,7 +408,7 @@
 											src="@img/products/jeans.png"
 											alt="@@alt"
 									/></a>
-									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
 									<div class="product-block__rating block-rating">
 										<div data-rating data-rating-value="4.5" class="rating"></div>
 										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
@@ -416,7 +424,7 @@
 											src="@img/products/jeans.png"
 											alt="@@alt"
 									/></a>
-									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
 									<div class="product-block__rating block-rating">
 										<div data-rating data-rating-value="4.5" class="rating"></div>
 										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
@@ -432,7 +440,7 @@
 											src="@img/products/jeans.png"
 											alt="@@alt"
 									/></a>
-									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
 									<div class="product-block__rating block-rating">
 										<div data-rating data-rating-value="4.5" class="rating"></div>
 										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
@@ -448,7 +456,7 @@
 											src="@img/products/jeans.png"
 											alt="@@alt"
 									/></a>
-									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
 									<div class="product-block__rating block-rating">
 										<div data-rating data-rating-value="4.5" class="rating"></div>
 										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
@@ -464,7 +472,7 @@
 											src="@img/products/jeans.png"
 											alt="@@alt"
 									/></a>
-									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
 									<div class="product-block__rating block-rating">
 										<div data-rating data-rating-value="4.5" class="rating"></div>
 										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
@@ -480,7 +488,7 @@
 											src="@img/products/jeans.png"
 											alt="@@alt"
 									/></a>
-									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
 									<div class="product-block__rating block-rating">
 										<div data-rating data-rating-value="4.5" class="rating"></div>
 										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
@@ -496,7 +504,7 @@
 											src="@img/products/jeans.png"
 											alt="@@alt"
 									/></a>
-									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
 									<div class="product-block__rating block-rating">
 										<div data-rating data-rating-value="4.5" class="rating"></div>
 										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
@@ -512,7 +520,7 @@
 											src="@img/products/jeans.png"
 											alt="@@alt"
 									/></a>
-									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
 									<div class="product-block__rating block-rating">
 										<div data-rating data-rating-value="4.5" class="rating"></div>
 										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>
@@ -528,7 +536,7 @@
 											src="@img/products/jeans.png"
 											alt="@@alt"
 									/></a>
-									<a class="product-block__title" href="#">Faded Skinny Jeans</a>
+									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
 									<div class="product-block__rating block-rating">
 										<div data-rating data-rating-value="4.5" class="rating"></div>
 										<div class="block-rating__grade"><span>4.5</span>/<span>5</span></div>

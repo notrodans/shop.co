@@ -12,7 +12,9 @@
 	</div>
 	<div class="header__container">
 		<div class="header__body">
-			<a href="/" class="header__logo logo-title">SHOP.CO</a>
+			<div class="header__logo">
+				<a href="/" class="logo-title">SHOP.CO</a>
+			</div>
 			<div class="header__menu menu">
 				<button type="button" class="menu__icon icon-menu">
 					<span></span>
@@ -37,27 +39,38 @@
 					</ul>
 				</nav>
 			</div>
-			<form class="header__search search-input">
-				<i class="search-input__icon _icon-search"></i>
-				<input
-					class="search-input__input _icon-search"
-					placeholder="Search for products..."
-					type="text"
-				/>
+			<form class="header__search">
+				<div class="input-field">
+					<i class="input-field__icon _icon-search"></i>
+					<input
+						class="input-field__input _icon-search"
+						placeholder="Search for products..."
+						type="text"
+					/>
+				</div>
 			</form>
 			<div class="header__actions actions-header">
 				<ul class="actions-header__list">
-					<li class="actions-header__item">
+					<li class="actions-header__item actions-header__item actions-header__item--search">
 						<a
 							href="/cart.html"
-							class="actions-header__link actions-header__link--cart _icon-cart"
-						></a>
+							class="actions-header__link actions-header__link--search _icon-search"
+						>
+							<span class="visibility-hidden"> Cart </span>
+						</a>
+					</li>
+					<li class="actions-header__item">
+						<a href="/cart.html" class="actions-header__link actions-header__link--cart _icon-cart">
+							<span class="visibility-hidden"> Cart </span>
+						</a>
 					</li>
 					<li class="actions-header__item">
 						<a
 							href="/profile.html"
 							class="actions-header__link actions-header__link--user _icon-user"
-						></a>
+						>
+							<span class="visibility-hidden"> User profile </span>
+						</a>
 					</li>
 				</ul>
 			</div>

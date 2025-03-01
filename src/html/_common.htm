@@ -53,3 +53,26 @@
 		<span class="prices__current">$210</span>
 	</div>
 </div>
+<div data-quantity class="product-card__quantity quantity-product">
+	<button
+		data-quantity-minus
+		type="button"
+		class="quantity-product__button quantity-product__button--minus"
+	></button>
+	<div class="quantity-product__input">
+		<input
+			data-quantity-value="1"
+			data-quantity-min="1"
+			data-quantity-max="999"
+			autocomplete="off"
+			type="text"
+			name="quantity"
+			value="1"
+		/>
+	</div>
+	<button
+		data-quantity-plus
+		type="button"
+		class="quantity-product__button quantity-product__button--plus"
+	></button>
+</div>

@@ -1,18 +1,11 @@
-// Підключення з node_modules
 import * as noUiSlider from "nouislider";
-import wNumb from "wnumb";
-
-// Підключення стилів з scss/base/forms/range.scss
-// у файлі scss/forms/forms.scss
 
 function rangeInit() {
 	const priceSlider = document.querySelector("#price-slider");
-	const priceStartValue = document.getElementById("price-start")?.value;
-	const priceEndValue = document.getElementById("price-end")?.value;
 
 	if (priceSlider) {
-		let textFrom = priceSlider.getAttribute("data-from");
-		let textTo = priceSlider.getAttribute("data-to");
+		let priceStartValue = priceSlider.getAttribute("data-from");
+		let priceEndValue = priceSlider.getAttribute("data-to");
 		noUiSlider.create(priceSlider, {
 			connect: true,
 			start: [Number(priceStartValue), Number(priceEndValue)],
@@ -25,6 +18,15 @@ function rangeInit() {
 				decimals: 0,
 				prefix: "$"
 			})
+		});
+	}
+
+	const priceStart = document.getElementById("price-start");
+	const priceEnd = document.getElementById("price-end");
+	if (priceStart && priceEnd) {
+		priceSlider.noUiSlider.on("set.one", function (valuesArray) {
+			priceStart.value = valuesArray[0].replace(/\$/g, "");
+			priceEnd.value = valuesArray[1].replace(/\$/g, "");
 		});
 	}
 }

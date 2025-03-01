@@ -4,7 +4,7 @@
 	}
 	// .menu__body
 	&__body {
-		@media (max-width: $mobile) {
+		@media (max-width: toEm(640)) {
 			position: fixed;
 			width: 100%;
 			height: 100%;
