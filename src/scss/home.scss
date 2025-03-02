@@ -13,12 +13,20 @@
 	}
 }
 
-.general {
+.hero {
 	&__body {
 		position: relative;
 		aspect-ratio: 1440 / 660;
 		@include adaptiveValue("padding-top", 66, 40);
 		@include adaptiveValue("padding-bottom", 114, 40);
+
+		@media (max-width: $mobileSmall) {
+			aspect-ratio: 390 / 853;
+		}
+
+		@media (max-width: $mobile) {
+			aspect-ratio: 390 / 600;
+		}
 	}
 
 	&__container {
@@ -44,13 +52,11 @@
 
 	&__title {
 		font-family: "Integral CF";
-		font-size: toRem(64);
-		font-style: normal;
+		@include adaptiveValue("font-size", 64, 34);
 		font-weight: 700;
-		line-height: math.div(64, 64);
 
 		&:not(:last-child) {
-			margin-bottom: toRem(32);
+			margin-bottom: toEm(32, 64);
 		}
 	}
 
@@ -64,14 +70,13 @@
 	}
 
 	&__link {
-		display: inline-flex;
-		padding: toRem(16) toRem(54);
-		justify-content: center;
-		align-items: center;
-		border-radius: toRem(62);
-		background: #000;
-		color: #fff;
-		font-weight: 500;
+		min-width: toRem(210);
+		text-align: center;
+
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+			max-width: none;
+		}
 	}
 
 	&__advantages {
@@ -84,28 +89,33 @@
 	}
 }
 
-.advantages-general {
-	display: grid;
-	grid-auto-flow: column;
-	grid-auto-columns: auto;
+.advantages-hero {
+	display: flex;
+	flex-wrap: wrap;
 	gap: toRem(62);
+
+	@media (min-width: $mobileSmall) {
+		justify-content: center;
+	}
 
 	&__block {
 		position: relative;
-		&:not(:last-child) {
-			&::before {
-				content: "";
-				width: toRem(1);
-				height: 100%;
-				background: rgba(0, 0, 0, 0.1);
-				position: absolute;
-				right: toRem(-32);
+		@media (min-width: $mobile) {
+			&:not(:last-child) {
+				&::before {
+					content: "";
+					width: toRem(1);
+					height: 100%;
+					background: rgba(0, 0, 0, 0.1);
+					position: absolute;
+					right: toRem(-32);
+				}
 			}
 		}
 	}
 
 	&__number {
-		font-size: toRem(40);
+		@include adaptiveValue("font-size", 40, 24);
 		font-weight: 700;
 
 		&:not(:last-child) {
@@ -117,9 +127,14 @@
 		color: rgba(0, 0, 0, 0.6);
 		line-height: math.div(22, 16);
 	}
+
+	&__number,
+	&__description {
+		text-shadow: 0 0 10px #fff;
+	}
 }
 
-.brands-general {
+.brands-hero {
 	&__container {
 	}
 	&__blocks {
@@ -324,6 +339,9 @@
 		display: flex;
 		flex-direction: column-reverse;
 		row-gap: toRem(12);
+		@media (min-width: $mobile) {
+			align-self: flex-start;
+		}
 
 		@media (min-width: $tablet) {
 			align-self: flex-start;
@@ -336,38 +354,42 @@
 	&__end {
 	}
 	&__thumbnails {
-		@include adaptiveValue("max-height", 160, 106, 3, 991.98, 474.98);
+		// flex: 1;
 		@media (min-width: $mobile) {
 			padding-block: toRem(6);
 		}
 	}
 	&__wrapper {
-	}
-	&__slide {
-		aspect-ratio: 152 / 168;
+		min-width: 0;
 	}
 	&__thumbnail {
-		border-radius: toRem(20);
-		.swiper-slide-active & {
-			border-block: toRem(1) solid #000;
-			border-inline: toRem(1) solid #000;
+		aspect-ratio: 112 / 106;
+		@media (min-width: $mobile) {
+			aspect-ratio: 152 / 168;
+		}
+		img {
+			border-radius: toRem(20);
+		}
+
+		&.swiper-slide-thumb-active img {
+			border: toRem(1) solid #000;
 		}
 	}
-	&__image {
-		flex: 1 1 auto;
-		aspect-ratio: 358/290;
+	&__main-image {
+		display: grid;
 		height: max-content;
 
 		@media (min-width: $mobile) {
 			flex: 0 1 71.62%;
+		}
+	}
+	&__image {
+		border-radius: toRem(20);
+		overflow: hidden;
+		aspect-ratio: 358/290;
+
+		@media (min-width: $mobile) {
 			aspect-ratio: 444/530;
-		}
-
-		@media (max-width: $mobile) {
-		}
-
-		img {
-			border-radius: toRem(20);
 		}
 	}
 	&__content {
@@ -551,8 +573,10 @@
 
 	&__spollers {
 		&:has(details[open]) {
-			&:has(#price-slider) + .separator {
-				margin-block-start: toRem(48);
+			&:has(#price-slider) {
+				.spollers__body {
+					padding-block-end: toRem(48);
+				}
 			}
 		}
 	}
@@ -581,16 +605,17 @@
 	}
 }
 .spollers {
+	margin-inline: toRem(-20);
 	&__item {
-		&[open] > .spollers__title {
-			&:not(:last-child) {
-				margin-bottom: toRem(20);
-			}
-		}
 	}
 
 	&__title {
-		position: relative;
+		padding-inline: toRem(20);
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: toRem(10);
 
 		&::marker {
 			display: none;
@@ -599,22 +624,21 @@
 
 		&._spoller-active {
 			&::before {
-				transform: rotate(90deg);
+				transform: rotate(90deg) translateY(50%);
 			}
 		}
 
 		&::before {
 			content: "\e909";
-			position: absolute;
 			font-size: toRem(11);
-			top: toRem(3.75);
-			right: 0;
 			transition: 0.2s transform;
 			@extend %ic;
 		}
 	}
 
 	&__body {
+		padding-block-start: toRem(20);
+		padding-inline: toRem(20);
 	}
 }
 .body-category {
@@ -638,7 +662,9 @@
 
 	&__actions {
 		display: flex;
+		flex-wrap: wrap;
 		column-gap: toRem(12);
+		row-gap: toRem(5);
 		color: rgba(0, 0, 0, 0.6);
 	}
 
@@ -674,8 +700,13 @@
 			}
 			&__options {
 				min-width: max-content;
+				width: 100%;
 				position: absolute;
 				left: 0;
+				background-color: #fff;
+				padding: toRem(5);
+				border: toRem(1) solid rgba(0, 0, 0, 0.1);
+				border-radius: toRem(5);
 			}
 			&__scroll {
 				padding-block: toRem(10);
@@ -686,6 +717,10 @@
 			&__option {
 				text-align: left;
 				font-weight: 500;
+				transition: color 0.1s;
+				&:hover {
+					color: #000;
+				}
 			}
 		}
 	}

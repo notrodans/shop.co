@@ -1,5 +1,11 @@
+:root {
+	--header-z-index: 1000;
+}
+
 .top-header {
 	background: #000;
+	position: relative;
+	z-index: var(--header-z-index);
 
 	&__container {
 		@include adaptiveValue("gap", 425, 0, 2, $containerWidth, 479.98);
@@ -53,14 +59,17 @@
 		padding-bottom: toRem(24);
 	}
 	&__body {
+		@include adaptiveValue("column-gap", 40, 15);
+		row-gap: toRem(10);
 		display: flex;
 		align-items: center;
-		column-gap: toRem(40);
+		container-type: inline-size;
+		container-name: header-body;
 	}
 	&__logo {
 	}
 	&__menu {
-		@media (max-width: $tablet) {
+		@media (max-width: toEm(640)) {
 			order: -1;
 		}
 	}
@@ -71,39 +80,68 @@
 			display: none;
 		}
 	}
+
+	&__actions {
+		@media (max-width: $tablet) and (min-width: toEm(390)) {
+			flex: 1;
+			justify-items: flex-end;
+		}
+
+		&:not(:last-child) {
+			margin-block-end: toRem(24);
+		}
+	}
 }
 
 .menu {
-	@media (max-width: $tablet) {
-		flex: 1;
-	}
 	&__icon {
-		display: none;
+		z-index: var(--header-z-index);
+		position: relative;
+		.menu-open & {
+			span,
+			&::before,
+			&::after {
+				background-color: #fff;
+			}
+		}
 	}
 	&__body {
+		z-index: 999;
+		&::before {
+			height: toRem(120);
+			background-color: #000;
+		}
+		@media (min-width: toEm(640)) {
+		}
+
+		@media (max-width: toEm(640)) {
+			padding-block: toRem(120);
+			padding-inline: toRem(16);
+			background-color: #000;
+			color: #fff;
+		}
 	}
 
 	&__list {
 		display: flex;
-		column-gap: toRem(24);
 		row-gap: toRem(10);
 		flex-wrap: wrap;
+		@include adaptiveValue("column-gap", 24, 12);
+
+		@media (max-width: toEm(640)) {
+			flex-direction: column;
+		}
 	}
 
 	&__item {
 		font-size: toRem(16);
+		@include adaptiveValue("font-size", 64, 32, 3, 640, 320);
 	}
 
 	&__link {
-		&--arrow {
-			display: inline-flex;
-			column-gap: toRem(4);
-			align-items: center;
-
-			> ._icon-arrowx {
-				font-size: toRem(16);
-				transform: rotate(90deg);
-			}
+		transition: all 50ms;
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 }
@@ -111,9 +149,15 @@
 .actions-header {
 	&__list {
 		display: flex;
-		column-gap: toRem(14);
+		align-items: center;
+		@include adaptiveValue("column-gap", 14, 8);
+
+		@media (max-width: toEm(640)) {
+			flex-wrap: wrap;
+		}
 	}
 	&__item {
+		max-height: toRem(24);
 		&--search {
 			display: none;
 			@media (max-width: $tablet) {
@@ -123,5 +167,12 @@
 	}
 	&__link {
 		font-size: toRem(24);
+		transition: color 0.2s;
+		aspect-ratio: 1;
+		max-width: toRem(24);
+		max-height: toRem(24);
+		&:hover {
+			color: rgba(0, 0, 0, 0.6);
+		}
 	}
 }
