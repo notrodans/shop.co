@@ -13,12 +13,20 @@
 	}
 }
 
-.general {
+.hero {
 	&__body {
 		position: relative;
 		aspect-ratio: 1440 / 660;
 		@include adaptiveValue("padding-top", 66, 40);
 		@include adaptiveValue("padding-bottom", 114, 40);
+
+		@media (max-width: $mobileSmall) {
+			aspect-ratio: 390 / 853;
+		}
+
+		@media (max-width: $mobile) {
+			aspect-ratio: 390 / 600;
+		}
 	}
 
 	&__container {
@@ -44,13 +52,11 @@
 
 	&__title {
 		font-family: "Integral CF";
-		font-size: toRem(64);
-		font-style: normal;
+		@include adaptiveValue("font-size", 64, 34);
 		font-weight: 700;
-		line-height: math.div(64, 64);
 
 		&:not(:last-child) {
-			margin-bottom: toRem(32);
+			margin-bottom: toEm(32, 64);
 		}
 	}
 
@@ -64,14 +70,13 @@
 	}
 
 	&__link {
-		display: inline-flex;
-		padding: toRem(16) toRem(54);
-		justify-content: center;
-		align-items: center;
-		border-radius: toRem(62);
-		background: #000;
-		color: #fff;
-		font-weight: 500;
+		min-width: toRem(210);
+		text-align: center;
+
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+			max-width: none;
+		}
 	}
 
 	&__advantages {
@@ -84,28 +89,33 @@
 	}
 }
 
-.advantages-general {
-	display: grid;
-	grid-auto-flow: column;
-	grid-auto-columns: auto;
+.advantages-hero {
+	display: flex;
+	flex-wrap: wrap;
 	gap: toRem(62);
+
+	@media (min-width: $mobileSmall) {
+		justify-content: center;
+	}
 
 	&__block {
 		position: relative;
-		&:not(:last-child) {
-			&::before {
-				content: "";
-				width: toRem(1);
-				height: 100%;
-				background: rgba(0, 0, 0, 0.1);
-				position: absolute;
-				right: toRem(-32);
+		@media (min-width: $mobile) {
+			&:not(:last-child) {
+				&::before {
+					content: "";
+					width: toRem(1);
+					height: 100%;
+					background: rgba(0, 0, 0, 0.1);
+					position: absolute;
+					right: toRem(-32);
+				}
 			}
 		}
 	}
 
 	&__number {
-		font-size: toRem(40);
+		@include adaptiveValue("font-size", 40, 24);
 		font-weight: 700;
 
 		&:not(:last-child) {
@@ -117,9 +127,14 @@
 		color: rgba(0, 0, 0, 0.6);
 		line-height: math.div(22, 16);
 	}
+
+	&__number,
+	&__description {
+		text-shadow: 0 0 10px #fff;
+	}
 }
 
-.brands-general {
+.brands-hero {
 	&__container {
 	}
 	&__blocks {
@@ -336,38 +351,47 @@
 	&__end {
 	}
 	&__thumbnails {
-		@include adaptiveValue("max-height", 160, 106, 3, 991.98, 474.98);
+		@include adaptiveValue("max-height", 160, 106, 3, 991.98, 489.98);
+
+		@media (min-width: $tablet) {
+			flex: 1;
+			max-width: toRem(152);
+
+			.product-card__slide {
+				aspect-ratio: 152 / 168;
+			}
+		}
+
 		@media (min-width: $mobile) {
 			padding-block: toRem(6);
 		}
 	}
-	&__wrapper {
-	}
-	&__slide {
-		aspect-ratio: 152 / 168;
-	}
-	&__thumbnail {
-		border-radius: toRem(20);
-		.swiper-slide-active & {
-			border-block: toRem(1) solid #000;
-			border-inline: toRem(1) solid #000;
-		}
-	}
-	&__image {
-		flex: 1 1 auto;
-		aspect-ratio: 358/290;
-		height: max-content;
 
-		@media (min-width: $mobile) {
+	&__main-image {
+		flex: 1 1 auto;
+		height: max-content;
+		display: grid;
+
+		@media (min-width: $tablet) {
 			flex: 0 1 71.62%;
 			aspect-ratio: 444/530;
 		}
 
-		@media (max-width: $mobile) {
+		.product-card__slide {
+			aspect-ratio: 358/290;
 		}
 
-		img {
+		.product-card__image {
 			border-radius: toRem(20);
+		}
+	}
+	&__wrapper {
+	}
+	&__thumbnail {
+		border-radius: toRem(20);
+
+		.swiper-slide-thumb-active & {
+			border: toRem(1) solid #000;
 		}
 	}
 	&__content {

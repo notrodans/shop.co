@@ -25,6 +25,13 @@ body {
 	height: 100%;
 	min-width: $minWidth + px;
 }
+html {
+	&:not(&.loaded) {
+		* {
+			transition: none;
+		}
+	}
+}
 body {
 	color: $mainColor;
 	line-height: 1;

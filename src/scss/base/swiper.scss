@@ -7,6 +7,7 @@
 	touch-action: pan-y;
 }
 .swiper-wrapper {
+	min-width: 0;
 	width: 100%;
 	height: 100%;
 	box-sizing: content-box;
