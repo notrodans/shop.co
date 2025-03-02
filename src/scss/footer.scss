@@ -96,13 +96,6 @@
 	}
 	&__field {
 		width: 100%;
-		padding: toRem(12) toRem(16);
-		border-radius: toRem(62);
-		background: #fff;
-
-		&--email {
-			padding: toRem(12) toRem(16) toRem(12) toRem(52);
-		}
 	}
 	&__button {
 		font-weight: 500;
@@ -171,6 +164,10 @@
 	&__item {
 	}
 	&__link {
+		width: 100%;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -194,7 +191,9 @@
 		border-radius: toRem(28);
 		border: toRem(1) solid rgba(0, 0, 0, 0.2);
 		background: #fff;
-		transition: 0.05s all linear;
+		transition:
+			background,
+			color 0.05s;
 
 		&:hover {
 			@media (hover: hover) {
