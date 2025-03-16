@@ -8,7 +8,7 @@ import TerserPlugin from "terser-webpack-plugin";
 import * as path from "path";
 
 const srcFolder = "src";
-const builFolder = "dist";
+const builFolder = "website";
 const rootFolder = path.basename(path.resolve());
 
 let cssImagesWebpLoader, htmlImagesWebpLoader;
