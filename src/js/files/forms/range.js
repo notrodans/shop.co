@@ -1,4 +1,5 @@
 import * as noUiSlider from "nouislider";
+import wNumb from "wnumb";
 
 function rangeInit() {
 	const priceSlider = document.querySelector("#price-slider");

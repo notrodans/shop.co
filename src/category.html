@@ -1,10 +1,10 @@
 <!doctype html>
-
 <html lang="en">
-	@@include('html/_head.htm',{ "title":"Category" })
+	<include src="head.htm" locals='{"title": "Category"}'></include>
+	<script type="module" defer src="js/app.js"></script>
 	<body>
 		<div class="wrapper">
-			@@include('html/_header.htm',{"line": "header_line"})
+			<include src="header.htm" locals='{"line": "true"}'></include>
 			<main class="page">
 				<nav class="breadcrumbs">
 					<div class="breadcrumbs__container">
@@ -503,7 +503,7 @@
 									<a href="#" class="product-block__link"
 										><img
 											class="product-block__image ibg ibg--contain"
-											src="@img/products/jeans.png"
+											src="/img/products/jeans.png"
 											alt="@@alt"
 									/></a>
 									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -519,7 +519,7 @@
 									<a href="#" class="product-block__link"
 										><img
 											class="product-block__image ibg ibg--contain"
-											src="@img/products/jeans.png"
+											src="/img/products/jeans.png"
 											alt="@@alt"
 									/></a>
 									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -535,7 +535,7 @@
 									<a href="#" class="product-block__link"
 										><img
 											class="product-block__image ibg ibg--contain"
-											src="@img/products/jeans.png"
+											src="/img/products/jeans.png"
 											alt="@@alt"
 									/></a>
 									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -551,7 +551,7 @@
 									<a href="#" class="product-block__link"
 										><img
 											class="product-block__image ibg ibg--contain"
-											src="@img/products/jeans.png"
+											src="/img/products/jeans.png"
 											alt="@@alt"
 									/></a>
 									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -567,7 +567,7 @@
 									<a href="#" class="product-block__link"
 										><img
 											class="product-block__image ibg ibg--contain"
-											src="@img/products/jeans.png"
+											src="/img/products/jeans.png"
 											alt="@@alt"
 									/></a>
 									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -583,7 +583,7 @@
 									<a href="#" class="product-block__link"
 										><img
 											class="product-block__image ibg ibg--contain"
-											src="@img/products/jeans.png"
+											src="/img/products/jeans.png"
 											alt="@@alt"
 									/></a>
 									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -599,7 +599,7 @@
 									<a href="#" class="product-block__link"
 										><img
 											class="product-block__image ibg ibg--contain"
-											src="@img/products/jeans.png"
+											src="/img/products/jeans.png"
 											alt="@@alt"
 									/></a>
 									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -615,7 +615,7 @@
 									<a href="#" class="product-block__link"
 										><img
 											class="product-block__image ibg ibg--contain"
-											src="@img/products/jeans.png"
+											src="/img/products/jeans.png"
 											alt="@@alt"
 									/></a>
 									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -631,7 +631,7 @@
 									<a href="#" class="product-block__link"
 										><img
 											class="product-block__image ibg ibg--contain"
-											src="@img/products/jeans.png"
+											src="/img/products/jeans.png"
 											alt="@@alt"
 									/></a>
 									<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -688,8 +688,7 @@
 					</div>
 				</section>
 			</main>
-			@@include('html/_footer.htm',{})
+			<include src="footer.htm"></include>
 		</div>
-		@@include('html/_js.htm',{})
 	</body>
 </html>

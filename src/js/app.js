@@ -37,8 +37,6 @@ import * as flsFunctions from "./files/functions.js";
 flsFunctions.addLoadedClass();
 /* Модуль для роботи з меню (Бургер) */
 flsFunctions.menuInit();
-/* Форматування чисел */
-import "./libs/wNumb.min.js";
 
 /*
 Модуль "Спойлери"

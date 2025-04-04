@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from "swiper";
-import { Navigation, Autoplay, Mousewheel, EffectFade, Thumbs } from "swiper/modules";
+import { Navigation, Autoplay, Mousewheel, EffectFade, Thumbs, Keyboard } from "swiper/modules";
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -28,7 +28,7 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector(".swiper")) {
+	if (document.querySelector(".customers__slider")) {
 		// Вказуємо склас потрібного слайдера
 		// Створюємо слайдер
 		new Swiper(".customers__slider", {
@@ -99,50 +99,60 @@ function initSliders() {
 		});
 	}
 
-	const thumbs = new Swiper(".product-card__thumbnails", {
-		// Вказуємо склас потрібного слайдера
-		// Підключаємо модулі слайдера
-		// для конкретного випадку
-		mousewheel: {
-			enabled: true,
-		},
-    autoHeight: false,
-    slidesPerView: "auto",
-		speed: 300,
-		breakpoints: {
-			320: {
-        //slidesPerView: 6,
-        spaceBetween: 12,
-        slidesPerView: "auto",
-        direction: "horizontal",
-      },
-      767.98: {
-        spaceBetween: 12,
-        slidesPerView: "auto",
-        direction: "horizontal",
-    },
-      991.98: {
-        direction: "vertical",
-        spaceBetween: 8,
-        slidesPerView: "3"
-    }
-		},
-	});
-  const mainImage =  new Swiper(".product-card__main-image", {
-		// Вказуємо склас потрібного слайдера
-		// Підключаємо модулі слайдера
-		// для конкретного випадку
-		modules: [Thumbs, EffectFade],
-		mousewheel: {
-			enabled: true,
-		},
-    effect: "fade",
-    slidesPerView: 1,
-		speed: 300,
-    thumbs: {
-      swiper: thumbs
-    }
-	});
+	if (
+		document.querySelector(".product-card__thumbnails") &&
+		document.querySelector(".product-card__main-image")
+	) {
+		const thumbs = new Swiper(".product-card__thumbnails", {
+			// Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			mousewheel: {
+				enabled: true
+			},
+			autoHeight: false,
+			slidesPerView: "auto",
+			speed: 300,
+			breakpoints: {
+				320: {
+					//slidesPerView: 6,
+					spaceBetween: 12,
+					slidesPerView: "auto",
+					direction: "horizontal"
+				},
+				767.98: {
+					spaceBetween: 12,
+					slidesPerView: "auto",
+					direction: "horizontal"
+				},
+				991.98: {
+					direction: "vertical",
+					spaceBetween: 8,
+					slidesPerView: "3"
+				}
+			}
+		});
+
+		new Swiper(".product-card__main-image", {
+			// Вказуємо склас потрібного слайдера
+			// Підключаємо модулі слайдера
+			// для конкретного випадку
+			modules: [Thumbs, EffectFade, Keyboard],
+			keyboard: {
+				enabled: true,
+				onlyInViewport: true
+			},
+			mousewheel: {
+				enabled: true
+			},
+			effect: "fade",
+			slidesPerView: 1,
+			speed: 300,
+			thumbs: {
+				swiper: thumbs
+			}
+		});
+	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {

@@ -1,10 +1,11 @@
 <!doctype html>
 
 <html lang="en">
-	@@include('html/_head.htm',{ "title":"Product Page" })
+	<include src="head.htm" locals='{"title": "Product Page"}'></include>
+	<script type="module" defer src="js/app.js"></script>
 	<body>
 		<div class="wrapper">
-			@@include('html/_header.htm', {"line": "header_line"})
+			<include src="header.htm" locals='{"line": "true"}'></include>
 			<main class="page page_product">
 				<nav class="page__breadcrumbs breadcrumbs">
 					<div class="breadcrumbs__container">
@@ -30,27 +31,27 @@
 						<div class="product-card__start">
 							<div class="product-card__thumbnails swiper">
 								<div class="product-card__wrapper swiper-wrapper">
-									<div class="product-card__thumbnail swiper-slide">
-										<img class="ibg" src="@img/product/01.png" alt="Image" />
-									</div>
-									<div class="product-card__thumbnail swiper-slide">
-										<img class="ibg" src="@img/product/02.png" alt="Image" />
-									</div>
-									<div class="product-card__thumbnail swiper-slide">
-										<img class="ibg" src="@img/product/03.png" alt="Image" />
-									</div>
+									<button class="product-card__thumbnail swiper-slide">
+										<img class="ibg" src="/img/product/01.png" alt="Image" />
+									</button>
+									<button class="product-card__thumbnail swiper-slide">
+										<img class="ibg" src="/img/product/02.png" alt="Image" />
+									</button>
+									<button class="product-card__thumbnail swiper-slide">
+										<img class="ibg" src="/img/product/03.png" alt="Image" />
+									</button>
 								</div>
 							</div>
 							<div class="product-card__main-image swiper">
 								<div class="product-card__wrapper swiper-wrapper">
 									<div class="product-card__image swiper-slide">
-										<img class="ibg" src="@img/product/04.png" alt="Image" />
+										<img class="ibg" src="/img/product/04.png" alt="Image" />
 									</div>
 									<div class="product-card__image swiper-slide">
-										<img class="ibg" src="@img/product/02.png" alt="Image" />
+										<img class="ibg" src="/img/product/02.png" alt="Image" />
 									</div>
 									<div class="product-card__image swiper-slide">
-										<img class="ibg" src="@img/product/03.png" alt="Image" />
+										<img class="ibg" src="/img/product/03.png" alt="Image" />
 									</div>
 								</div>
 							</div>
@@ -528,7 +529,7 @@
 								<a href="#" class="product-block__link"
 									><img
 										class="product-block__image ibg ibg--contain"
-										src="@img/products/t-shirt.png"
+										src="/img/products/t-shirt.png"
 										alt="@@alt"
 								/></a>
 								<a class="product-block__title product-title" href="#">Vertical Striped Shirt</a>
@@ -546,7 +547,7 @@
 								<a href="#" class="product-block__link"
 									><img
 										class="product-block__image ibg ibg--contain"
-										src="@img/products/t-shirt2.png"
+										src="/img/products/t-shirt2.png"
 										alt="@@alt"
 								/></a>
 								<a class="product-block__title product-title" href="#">Courage Graphic T-shirt</a>
@@ -562,7 +563,7 @@
 								<a href="#" class="product-block__link"
 									><img
 										class="product-block__image ibg ibg--contain"
-										src="@img/products/shorts.png"
+										src="/img/products/shorts.png"
 										alt="@@alt"
 								/></a>
 								<a class="product-block__title product-title" href="#">Loose Fit Bermuda Shorts</a>
@@ -578,7 +579,7 @@
 								<a href="#" class="product-block__link"
 									><img
 										class="product-block__image ibg ibg--contain"
-										src="@img/products/jeans.png"
+										src="/img/products/jeans.png"
 										alt="@@alt"
 								/></a>
 								<a class="product-block__title product-title" href="#">Faded Skinny Jeans</a>
@@ -594,8 +595,7 @@
 					</div>
 				</section>
 			</main>
-			@@include('html/_footer.htm',{})
+			<include src="footer.htm"></include>
 		</div>
-		@@include('html/_js.htm',{})
 	</body>
 </html>
