@@ -25,15 +25,17 @@ $responsiveType: 1;
 //Підключення шрифту
 @mixin font($font_name, $file_name, $weight, $style) {
 	@font-face {
-		font-family: $font_name;
-		font-display: swap;
-		src:
-			url("../fonts/#{$file_name}.woff2") format("woff2"),
-			url("../fonts/#{$file_name}.woff") format("woff");
 		font-weight: #{$weight};
+		font-family: $font_name;
 		font-style: #{$style};
+		src:
+			url("/fonts/#{$file_name}.ttf") format("truetype"),
+			url("/fonts/#{$file_name}.woff2") format("woff2"),
+			url("/fonts/#{$file_name}.woff") format("woff");
+		font-display: swap;
 	}
 }
+
 //Percent
 @function percent($px, $from: 100) {
 	$result: math.div($px, $from) * 100%;
